@@ -1,0 +1,85 @@
+<div class="box-panel">
+    <div class="panel-body">
+        <div class="col-md-6">
+            <div class="view-item">
+                <p><span class="view-item-title">Full Name: </span> <strong class="">{{company.FullName}}</strong></p>
+                <h5>
+                    <span *ngIf="company.Phone">Telephone: {{company.Phone}}</span>
+                    <span *ngIf="company.Fax">Fax: {{company.Fax}}</span>
+                </h5>
+                <h5>
+                    <span> Type: {{company.Type}}</span>
+                    <span> Birthday: {{company.Birthday}}</span>
+                </h5>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="view-item">
+                <p><span class="view-item-title">Other infomation: </span></p>
+                <h5 *ngIf="company.BankCode">
+                    <span> Bank: </span>
+                    <span> {{company.BankCode}}</span>
+                    <span> {{company.BankName}}</span>
+                </h5>
+                <h5 *ngIf="company.TaxCode">
+                    <span> Tax: </span>
+                    <span> {{company.TaxCode}}</span>
+                    <span> {{company.AddressTax}}</span>
+                </h5>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="view-item">
+                <p><span class="view-item-title">Hoat dong: </span></p>
+
+                <table class="table table-condensed table-min">
+                    <tbody>
+                    <tr class="table-header">
+                        <td >
+                            Date
+                        </td>
+                        <td>
+                           GuestName
+                        </td>
+                        <td>
+                            RoomType
+                        </td>
+                        <td>
+                           RoomNumber
+                        </td>
+                        <td>
+                            Nights
+                        </td>
+                        <td>
+                           NightRate
+                        </td>
+                    </tr>
+                    <tr *ngFor="let booking of bookingList">
+                        <td>
+                            {{booking.Date}}
+                        </td>
+                        <td>
+                           {{booking.GuestName}}
+                        </td>
+                        <td>
+                            {{booking.RoomType}}
+                        </td>
+                        <td>
+                            {{booking.RoomNumber}}
+                        </td>
+                        <td>
+                            {{booking.Nights}}
+                        </td>
+                        <td>
+                           {{booking.NightRate}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>

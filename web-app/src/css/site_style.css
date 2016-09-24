@@ -1,0 +1,168 @@
+
+
+/* header menu*/
+.site-navigation {
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.site-navigation .container-fluid .navbar-toggle, .site-navigation .container .navbar-toggle {
+    margin-right: 0
+}
+
+.site-navigation .navbar-toggle {
+    display: none;
+    border: 0;
+    line-height: 40px;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #55595c
+}
+
+.site-navigation .navbar-toggle .fa {
+    font-size: 21px
+}
+
+.site-navigation .logo {
+    float: left
+}
+
+.site-navigation .logo img {
+    height: 100px;
+    transition: height .2s linear
+}
+
+.site-navigation ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.site-navigation ul li:hover > ul {
+    top: 100%;
+    opacity: 1;
+    visibility: visible
+}
+
+.site-navigation .nav-menu {
+    float: right
+}
+
+.site-navigation .nav-menu > li {
+    position: relative;
+    display: inline-block;
+    padding: 0 2px
+}
+
+.site-navigation .nav-menu > li:hover > a {
+    color: #9e7dd3
+}
+
+.site-navigation .nav-menu > li:hover > a.menu-highlighted {
+    color: #fff
+}
+
+.site-navigation .nav-menu a {
+    display: inline-block;
+    font-family: Raleway, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    line-height: 30px;
+    color: #818a91;
+    transition: color .2s linear, line-height .2s linear
+}
+
+.site-navigation .nav-menu a:hover {
+    color: #9e7dd3;
+    text-decoration: none
+}
+
+.site-navigation .nav-menu a.active {
+    color: #9e7dd3;
+    border-top: 2px solid #9e7dd3
+}
+
+.site-navigation .nav-menu a.menu-highlighted {
+    line-height: 50px;
+    margin: 25px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #a788d7;
+    transition: all .2s linear
+}
+
+.site-navigation .nav-menu a.menu-highlighted:hover {
+    color: #fff;
+    background-color: #9e7dd3
+}
+
+.site-navigation .nav-menu ul {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border-top: 2px solid #9e7dd3;
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s ease-in-out, top .2s ease-in-out
+}
+
+.site-navigation .nav-menu ul li a {
+    line-height: 40px;
+    white-space: nowrap;
+    display: block;
+    min-width: 150px;
+    font-weight: 600;
+    border-bottom: 1px solid #f8f9fa
+}
+
+.site-navigation .nav-menu ul li:last-child a {
+    border-bottom: 0
+}
+
+.site-navigation .nav-menu ul a.active {
+    border-top: none
+}
+
+.site-navigation.container-fluid .nav-menu > li:last-child ul {
+    left: auto;
+    right: 0
+}
+
+/*Quan phan*/
+.bt-link{
+   background-color: transparent;
+    border: none;
+}
+
+
+.nav-page {
+    padding-bottom: 12px;
+    padding-left: 0px;
+}
+
+
+.page-link > li {
+    position: relative;
+    display: inline-block;
+
+}
+.page-link a {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #778899;
+}
+
+.page-link p {
+    color: #FFFFFF;
+}
+

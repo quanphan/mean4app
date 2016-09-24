@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-form">
+            <div class="box-header">
+                <button *ngIf="!addActive" class="btn-i btn-outline-link btn-xs btn-flat" (click)="newPackage()">New package</button>
+                <ng2-Search *ngIf="!addActive" class="col-md-8 fload-right" ngLabel="Search for" (onSearch)="onSearch()"
+                            [(bindModelData)]="packageFileter"></ng2-Search>
+
+                <form class="col-md-12 fload-right" *ngIf="addActive" role="form" (ngSubmit)="onSubmit()" style="margin-bottom: 5px">
+                    <div class="box-form" style="margin-bottom: 0px">
+                        <div class="box-body">
+                            <div class="row">
+                                <ng2-Input class="col-md-2"  ngLabel="Code"  [(bindModelData)]="packageSelete.Code"></ng2-Input>
+                                <ng2-Input class="col-md-2"  ngLabel="Name"  [(bindModelData)]="packageSelete.Name"></ng2-Input>
+
+                                <ng2-select class="col-md-2" ngLabel="Package code" [values]="setupService.packageCode" dataValue='Code' dataText='Name'
+                                            [(bindModelData)]="packageSelete.PackageCode" ></ng2-select>
+
+                                <div class="col-md-2 input-group">
+                                    <button type="submit" class="btn  btn-flat btn-sm fload-right " style="margin-left: 5px">Add</button>
+                                    <button type="button" class="btn  btn-flat  btn-sm fload-right" (click)="doneSubmit()">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="box-body">
+                <table class="table table-min table-hover">
+                    <tbody>
+                    <tr class="table-header">
+                        <td >
+                            Code
+                        </td>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            Package Code
+                        </td>
+
+                    </tr>
+                    <tr *ngFor="#package of setupService.packages" (click)="onClick(package)">
+                        <td>
+                            <strong><a>{{package.Code}}</a></strong>
+                        </td>
+                        <td>
+                            {{package.Name}}
+                        </td>
+                        <td>
+                            {{package.PackageCode}}
+                        </td>
+
+                        <td>
+                            <i class="fa fa-fw fa-edit" (click)="edit(package)"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

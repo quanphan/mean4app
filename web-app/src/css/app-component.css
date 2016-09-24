@@ -1,0 +1,846 @@
+/* page  content*/
+.content-wrapper{
+    background-color: #D0D7DA;
+}
+
+.ng-form{
+    padding: 10px;
+    background-color: #B9C7CE;
+}
+
+.nav-tabs{
+    /*background-color: #D0D7DA;*/
+    background-color: #f2f4f5;
+}
+.main-header .logo-module {
+    -webkit-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0 5px;
+    font-weight: 300;
+    overflow: hidden;
+}
+.skin-blue .main-header .logo {
+    /*background-color: #367fa9;*/
+    background-color:#3c8dbc !important;
+
+}
+.main-header .sidebar-toggle {
+    background-color: #367fa9;
+}
+.content-header{
+    border-bottom: 1px solid #F2F4F5;
+    background-color:#D0D7DA !important;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+/* header menu*/
+.site-navigation {
+    /*background-color: #fff;*/
+    position: relative;
+    z-index: 10;
+}
+
+.site-navigation .container-fluid .navbar-toggle, .site-navigation .container .navbar-toggle {
+    margin-right: 0
+}
+
+.site-navigation .navbar-toggle {
+    display: none;
+    border: 0;
+    line-height: 40px;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #55595c
+}
+
+.site-navigation .navbar-toggle .fa {
+    font-size: 21px
+}
+
+.site-navigation .logo {
+    float: left
+}
+
+.site-navigation .logo img {
+    height: 100px;
+    transition: height .2s linear
+}
+
+.site-navigation ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.site-navigation ul li:hover > ul {
+    top: 100%;
+    opacity: 1;
+    visibility: visible
+}
+
+.site-navigation .nav-menu {
+    float: right
+}
+
+.site-navigation .nav-menu > li {
+    position: relative;
+    display: inline-block;
+    padding: 0 2px
+}
+
+.site-navigation .nav-menu > li:hover > a {
+    color: #9e7dd3
+}
+
+.site-navigation .nav-menu > li:hover > a.menu-highlighted {
+    color: #fff
+}
+
+.site-navigation .nav-menu a {
+    display: inline-block;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    line-height: 30px;
+    color: #818a91;
+    transition: color .2s linear, line-height .2s linear
+}
+
+.site-navigation .nav-menu a:hover {
+    color: #9e7dd3;
+    text-decoration: none
+}
+
+.site-navigation .nav-menu a.active {
+    color: #9e7dd3;
+    border-top: 2px solid #9e7dd3
+}
+
+.site-navigation .nav-menu a.menu-highlighted {
+    line-height: 50px;
+    margin: 25px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #a788d7;
+    transition: all .2s linear
+}
+
+.site-navigation .nav-menu a.menu-highlighted:hover {
+    color: #fff;
+    background-color: #9e7dd3
+}
+
+.site-navigation .nav-menu ul {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border-top: 2px solid #9e7dd3;
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s ease-in-out, top .2s ease-in-out
+}
+
+.site-navigation .nav-menu ul li a {
+    line-height: 40px;
+    white-space: nowrap;
+    display: block;
+    min-width: 150px;
+    font-weight: 600;
+    border-bottom: 1px solid #f8f9fa
+}
+
+.site-navigation .nav-menu ul li:last-child a {
+    border-bottom: 0
+}
+
+.site-navigation .nav-menu ul a.active {
+    border-top: none
+}
+
+.site-navigation.container-fluid .nav-menu > li:last-child ul {
+    left: auto;
+    right: 0
+}
+
+
+/*Quan phan*/
+.bt-link{
+    background-color: transparent;
+    border: none;
+    padding: 5px 8px;
+}
+.bt-link:hover{
+    color: inherit;
+}
+/*nav-page*/
+.nav-page {
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+.page-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0px;
+}
+.nav-page > ul {
+    margin-bottom: 0 !important
+}
+.page-link > li {
+    position: relative;
+    display: inline-block;
+}
+.page-link a {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #3C8DBC;
+    font-weight: 400;
+}
+
+.page-link p {
+    color: #FFFFFF;
+}
+
+/*sub-page*/
+.sub-page {
+    padding-bottom: 30px;
+    padding-left: 0px;
+}
+.sub-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0px;
+    padding-left:15px ;
+}
+.sub-page > ul {
+    margin-bottom: 0 !important
+}
+.sub-link > li {
+    position: relative;
+    display: inline-block;
+    border-bottom:0px solid #f4f4f4 ;
+    margin-right: 8px;
+    padding-bottom: 3px;
+}
+.sub-link > li>a:hover {
+    color: #001a35;
+}
+.sub-link > li.active {
+    border-bottom:1px solid #3c8dbc ;
+    color: #001a35 !important;
+}
+
+.sub-link a {
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #395a6d;
+    font-weight: 400;
+}
+
+
+/*Control*/
+.ngcontrol-menu  li {
+    color: #444444;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid #f4f4f4;
+}
+.ngcontrol-menu  li a {
+    color: #444444;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 8px;
+}
+.btn-outline-link {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #727373;
+}
+
+.btn-i {
+    -webkit-border-radius: 29px;
+    -moz-border-radius: 29px;
+    border-radius: 29px;
+    font-family: Arial;
+    color: #ffffff;
+    background: #3498db;
+    text-decoration: none;
+}
+
+.btn-i:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+}
+
+/*PageCommon*/
+.fload-right{
+    float: right;
+}
+.padding-0{
+    padding: 0px;
+}
+.background-none{
+    background: transparent !important;
+}
+.status-active{
+    color: #55acee;
+}
+.box-gird {
+    position: relative;
+    /*border-radius: 3px;*/
+    background: #F2F4F5;
+    border-top: 0px solid #d2d6de;
+    margin-bottom: 10px;
+    width: 100%;
+    /* box-shadow: 0 1px 1px rgba(0,0,0,0.1); */
+}
+.box-form {
+    position: relative;
+    border-radius: 3px;
+    background: #F2F4F5;
+    box-shadow: none;
+    margin-bottom: 20px;
+    width: 100%;
+    /* box-shadow: 0 1px 1px rgba(0,0,0,0.1); */
+}
+.box-panel {
+    position: relative;
+    border-radius: 3px;
+    background: #F2F4F5;
+    box-shadow: none;
+    margin-bottom: 20px;
+    width: 100%;
+    /* box-shadow: 0 1px 1px rgba(0,0,0,0.1); */
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #D0D7DA;
+}
+.nav-tabs-custom > .nav-tabs > li.active > a, .nav-tabs-custom > .nav-tabs > li.active:hover > a {
+    background-color: #F2F4F5;
+    color: #444;
+}
+.box-body{
+    padding-top: 0;
+}
+.tytle-mini{
+    font-size: small;
+    color: #55acee;
+}
+.nowrap {
+    white-space: nowrap ;
+    display:inline;
+}
+.ng-input {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    display: block;
+    margin-top: 0;
+    background: 0 0;
+    padding: 2px 2px 1px;
+    border-width: 0 0 1px;
+    line-height: 26px;
+    height: 30px;
+    -ms-flex-preferred-size: 26px;
+    border-radius: 0;
+    border-style: solid;
+    width: 100%;
+    box-sizing: border-box;
+    border-color: rgba(0,0,0,0.12);
+}
+.ng-search {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    display: block;
+    margin-top: 0;
+    background: 0 0;
+    padding: 2px 2px 1px;
+    border-width: 0 0 1px;
+    line-height: 26px;
+    height: 30px;
+    -ms-flex-preferred-size: 26px;
+    border-radius: 0;
+    border-style: solid;
+    width: 100%;
+    box-sizing: border-box;
+    border-color: rgba(0,0,0,0.12);
+}
+.input-group-addon{
+    padding: 0;
+}
+.input-group .input-group-addon{
+    border-width: 0 0 1px;
+    border-color: rgba(0,0,0,0.12);
+    background: 0 0;
+}
+.ng-input:hover{
+    border-color: #3C8DBC;
+}
+.ng-input-active{
+    border-color: #3C8DBC !important;
+}
+ng2-Textbox.ng-block {
+    display: block;
+}
+ng2-Input.ng-block {
+    display: block;
+}
+ng2-select.ng-block {
+    display: block;
+}
+.ng-label {
+    font-size: small;
+    color: #9DB0BB;;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.has-active {
+    font-size: small;
+    color: #3c8dbc;
+    box-shadow: none;
+}
+ng2-Textbox, ng2-Input, ng2-select{
+    display: inline-block;
+    position: relative;
+    padding: 2px;
+    margin: 10px 0;
+    vertical-align: middle;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color:#F2F4F5;
+}
+
+.view-item{
+    padding-top:8px;
+    /*background: #D0D7DA;*/
+    border-bottom: 1px solid #D0D7DA;
+    /*margin-bottom: 5px;*/
+}
+.view-item-title{
+    color: #55acee;
+}
+.view-item h5{
+
+}
+.box-title{
+    color: #55acee;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img{
+    margin: auto;
+}
+
+.table-min{
+    font-size: 12px;
+}
+.table-header > td{
+    border: none !important;
+    color: #9DB0BB;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.input-panel{
+    background-color: #F2F4F5;
+    margin-top: 0px;
+}
+.input-panel-header{
+
+    border:0px solid #D0D7DA;
+}
+.item-fix{
+    padding: 0px;
+    margin: 0px;
+}
+.rowWithFullWidth {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.icheckbox {
+    width: 25px;
+    height: 25px;
+    background-color: #F2F4F5;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin-right: 5px;
+    border:1px solid #D0D7DA;
+    margin-bottom: 5px;
+}
+.margin-tb15
+{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.margin-tb5
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.margin-t10
+{
+    margin-top: 10px;
+}
+.margin-t5
+{
+    margin-top: 3px;
+}
+.margin-b5
+{
+    margin-bottom: 3px;
+}
+.padding-t10
+{
+    padding-top: 10px;
+}
+.padding-t5
+{
+    padding-top: 5px;
+}
+.padding-l0{
+    padding-left: 0px;
+}
+.padding-r5{
+    padding-right: 3px;
+}
+.page-title{
+    color: #3C8DBC;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/*---Room plan*/
+.table-plan{
+    font-size: 12px;
+    border-bottom: 1px solid #E7F0F5 !important;
+}
+.roomItem{
+    border-right: 1px solid #E7F0F5 !important;
+    border-top: 1px solid #E7F0F5 !important;
+}
+.roomItem-firt{
+    border-left: 1px solid #E7F0F5 !important;
+
+}
+.planConten{
+    background-color: #D6E2E6;
+}
+.yesterday{
+    background-color: #BCBEBF;
+}
+.cell-header{
+    width: 50px;
+}
+
+.cell-item{
+    padding: 0px !important;
+    min-width: 100px;
+}
+
+room-item {
+    width: 100%;
+    height: 32px;
+    display: block;
+}
+.roomno{
+    height: 100%;
+    display: block;
+}
+
+.room-item:hover{
+    border: 1px solid #0A98EA !important;
+}
+.room-item-move{
+    border: 1px solid #3C8DBC !important;
+}
+.room-select{
+    background-color: #3C8DBC;
+}
+
+.res-in{
+    background-color: #9f191f;
+}
+.res-out{
+    background-color: #00bcd4;
+}
+.res-re{
+    background-color: #00c853;
+}
+
+
+/*Date time Input : 350px;*/
+.ng-datepicker-input {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.ng-datepicker {
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+    font-size: 12px;
+    color: #565a5c;
+    display: inline-block;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    width:290px;
+}
+
+.ng-datepicker > .controls {
+    display: inline-block;
+    padding: 5px;
+    margin: 10px 10px 0px 10px;
+    width: 265px;
+}
+
+.ng-datepicker > .controls i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.ng-datepicker > .controls > .left {
+    width: 35px;
+    display: inline-block;
+    float: left;
+    margin: 5px 0 0 3px;
+}
+
+.ng-datepicker > .controls > .left > i.prev-year-btn {
+    float: left;
+    display: block;
+    font-size: 14px;
+    opacity: 0.4;
+}
+
+.ng-datepicker > .controls > .left > i.prev-month-btn {
+    float: left;
+    margin: -5px 0 0 9px;
+    display: block;
+    color: #ced0d0;
+}
+
+.ng-datepicker > .controls > span.date {
+    width: 170px;
+    text-align: center;
+    font-size: 14px;
+    color: #737192;
+    font-weight: bold;
+    float: left;
+    padding: 3px 0 0 0;
+}
+
+.ng-datepicker > .controls > .right {
+    width: 35px;
+    display: inline-block;
+    float: right;
+    margin: 5px 0 0 0;
+}
+
+.ng-datepicker > .controls > .right > i.next-year-btn {
+    float: left;
+    display: block;
+    font-size: 14px;
+    opacity: 0.4;
+}
+
+.ng-datepicker > .controls > .right > i.next-month-btn {
+    float: left;
+    margin: -6px 9px 0 0;
+    color: #ced0d0;
+}
+
+
+
+.ng-datepicker > .day-names {
+    width: 100%;
+    /*border-bottom: 1px solid #c4c4c4;*/
+    /*display: inline-block;*/
+    margin: 10px;
+}
+
+.ng-datepicker > .day-names > div {
+    text-align: center;
+    color: #3d8ebc;
+    float: left;
+    display: block;
+    font-size: medium;
+    width: 38px;
+}
+
+.dayItem{
+    padding: 0px;
+    font-size: medium;
+}
+
+.ng-datepicker > .calendar {
+    /*width: 255px;*/
+    display: inline-block;
+    margin: -3px 0 -3.5px -1px;
+    margin: 10px;
+}
+
+.ng-datepicker > .calendar > span > span.day {
+    width: 38px;
+    height: 35px;
+    /*border-left: 1px solid #c4c4c4;*/
+    /*border-bottom: 1px solid #c4c4c4;*/
+    float: left;
+    display: block;
+    color: #565a5c;
+    text-align: center;
+    font-weight: bold;
+    line-height: 35px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ng-datepicker > .calendar > span:last-child > span.day {
+    /*border-right: 1px solid #c4c4c4;*/
+}
+
+.ng-datepicker > .calendar > span:nth-child(7n) > span.day {
+    border-right: none;
+}
+
+.ng-datepicker > .calendar > span > span.day.disabled {
+    /*border-left: 1px solid transparent;*/
+    cursor: default;
+    pointer-events: none;
+}
+
+.ng-datepicker > .calendar > span > span.day:hover {
+    background: #f4f7f9;
+    color: #70a7c6;
+}
+
+.ng-datepicker > .calendar > span > span.day.selected {
+    background: #186c81;
+    cursor: default;
+    pointer-events: none;
+    color: #fff;
+    background: #d0d7da;
+    color: #70a7c6;
+}
+
+.ng-datepicker.static {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ng-datepicker.static > .controls {
+    width: 100%;
+    text-align: center;
+    background-color: #eee;
+    padding: 5px 0;
+}
+
+.ng-datepicker.static > .controls > .left > i.prev-month-btn {
+    margin-top: -6px;
+}
+
+.ng-datepicker.static > .controls > span.date {
+    width: auto;
+    float: none;
+    display: inline-block;
+    padding-top: 4px;
+}
+
+.ng-datepicker.static > .day-names {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.ng-datepicker.static > .day-names > span {
+    width: calc(100%/7);
+}
+
+.ng-datepicker.static > .calendar {
+    width: 100%;
+}
+
+.ng-datepicker.static > .calendar > span > span.day {
+    width: calc(100%/7 - 1px);
+    height: 50px;
+    line-height: 50px;
+}
+
+
+.ng-valid[required] {
+    /*border-left: 0px solid #42A948; !* green *!*/
+}
+.ng-invalid {
+    border-left: 0px solid #a94442; /* red */
+}
+.alerterror{
+    color: red !important;
+    background-color: transparent !important;
+}
+.alerterror-icon{
+    font-size: 6px;
+    vertical-align: top;
+    padding-top: 3px;
+}
+
+.box-gird-view{
+    /*background-color: #f0f0f0;*/
+}
+.box-gird-view .item{
+    border: 1px solid #d0d7da;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    background-color: #e7eef1;
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+.user-header{
+    /*border-bottom: 1px solid #f1eaea;*/
+    font-size: 18px;
+}
+
+.h-20{
+    height: 20px;
+}
+.h-25{
+    height: 25px;
+}
+
+.h-bt{
+    height: 32px;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+.subpage-container
+{
+    padding: 0px 15px;
+}

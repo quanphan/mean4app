@@ -1,0 +1,30 @@
+/*tab-css*/
+
+.panel .panel-heading ul li {
+    /*border-top:1px solid #e6e6e6 ;*/
+    /*border-left:1px solid #e6e6e6 ;*/
+    /*border-right:1px solid #e6e6e6 ;*/
+}
+
+.tab-bg-info.panel-heading .nav > li.active > a, .tab-bg-info.panel-heading .nav > li > a:hover{
+    border-top:1px solid #528B8B ;
+}
+
+.panel-heading .nav > li.active > a, .panel-heading .nav > li > a:hover {
+    color: #688a7e;
+    background: #fff;
+    border-top:1px solid #528B8B ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

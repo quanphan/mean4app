@@ -1,0 +1,77 @@
+<div>
+    <form role="form" (ngSubmit)="onSubmit()">
+        <div class="box-form ">
+            <!--<div class="box-header with-border">-->
+                <!--<h5 class="box-title">* is requyre</h5>-->
+            <!--</div>-->
+            <div class="box-body">
+                <div class="col-md-6">
+                    <div class="row col-md-12">
+                        <h4 class="box-title">Infomation</h4>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-4"  ngLabel="Code"  [(bindModelData)]="comp.Code"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-8"  ngLabel="Name"  [(bindModelData)]="comp.Name"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-select class="ng-block col-md-4" ngLabel="Leved" [values]="comService.levedList" dataValue='value' dataText='label' [(bindModelData)]="comp.Leved" ></ng2-select>
+                        <ng2-Input class="ng-block col-md-8"  ngLabel="Type"  [(bindModelData)]="comp.Type"></ng2-Input>
+                    </div>
+                    <div class="row">
+
+                        <ng2-Input class="ng-block col-md-6"  ngLabel="Country"  [(bindModelData)]="comp.Country"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-6"  ngLabel="State"  [(bindModelData)]="comp.State"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-12"  ngLabel="Address 1"  [(bindModelData)]="comp.Address"></ng2-Input>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row col-md-12">
+                        <h4 class="box-title">Contact</h4>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-6"  ngLabel="Phone"  [(bindModelData)]="comp.Phone"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-6"  ngLabel="Fax"  [(bindModelData)]="comp.Fax"></ng2-Input>
+
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-8"  ngLabel="Website"  [(bindModelData)]="comp.WebSite"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-8"  ngLabel="Contact name"  [(bindModelData)]="comp.Contact"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-4"  ngLabel="Mobile"  [(bindModelData)]="comp.Mobile"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-8"  ngLabel="Email"  [(bindModelData)]="comp.Mail"></ng2-Input>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <h4 class="col-md-12 box-title">Other Infomation</h4>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-6"  ngLabel="FullName"  [(bindModelData)]="comp.FullName"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-6"  ngLabel="Birthday"  [(bindModelData)]="comp.Birthday"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-3"  ngLabel="Tax code"  [(bindModelData)]="comp.TaxCode"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-9"  ngLabel="Address 2"  [(bindModelData)]="comp.AddressTax"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-3"  ngLabel="Bank code"  [(bindModelData)]="comp.BankCode"></ng2-Input>
+                        <ng2-Input class="ng-block col-md-9"  ngLabel="Bank name"  [(bindModelData)]="comp.BankName"></ng2-Input>
+                    </div>
+                    <div class="row">
+                        <ng2-Input class="ng-block col-md-12"  ngLabel="Description"  [(bindModelData)]="comp.Description"></ng2-Input>
+                    </div>
+                </div>
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

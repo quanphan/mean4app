@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-lg-3 col-sm-3">
+        <ng2-select [values]="comService.typeList" dataValue='value' dataText='label' [(bindModelData)]="typeSelected" ></ng2-select>
+
+    </div>
+
+    <div class="col-lg-9 col-sm-9">
+        <!--<div class="input-group">-->
+        <!--<input [(ngModel)]="comFileter" type="text" class="form-control" placeholder="Search for...">-->
+        <!--<span class="input-group-btn">-->
+        <!--<button (click)="onSearch()" class="btn btn-default" type="button">Search!</button>-->
+        <!--</span>-->
+        <!--</div>-->
+        <div class="btn-group fload-right" role="group" aria-label="...">
+            <button type="button" class="btn btn-default status-active">Active</button>
+            <button type="button" class="btn btn-default">UnActive</button>
+
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    All leved
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a >Top leved</a></li>
+                    <li><a >Last leved</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-gird">
+            <div class="box-header">
+                <div class="input-group">
+                    <button class="btn-i btn-outline-link btn-xs btn-flat">Top new</button>
+                    <button class="btn-i btn-outline-link btn-xs btn-flat">Top revenue</button>
+                    <button class="btn-i btn-outline-link btn-xs btn-flat">Top booking</button>
+                </div>
+                <div class="box-tools">
+                    <!--<div class="input-group" style="width: 300px">-->
+                        <!--<input [(ngModel)]="comFileter" type="text" class="form-control ng-input" placeholder="Search for...">-->
+                        <!--<span class="input-group-btn">-->
+                            <!--<button (click)="onSearch()" class="btn btn-default" type="button">Search!</button>-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <ng2-Search class="col-md-4 fload-right" ngLabel="Search for" (onSearch)="onSearch()"  [(bindModelData)]="comFileter"></ng2-Search>
+                </div>
+            </div>
+            <div class="box-body1">
+                <table class="table">
+                    <tbody>
+                    <tr class="table-header">
+                        <td>Name</td>
+                        <td>Contact</td>
+                        <td>Address</td>
+                    </tr>
+                    <tr *ngFor="let company of comService.companyList">
+                        <td>
+                            <p (click)="onViewItemClick(company._id)"><strong><a>{{company.Name}}</a></strong>
+                                <span class="tytle-mini" *ngIf="company.Status==0">.Pending..</span>
+                            </p>
+                            <h5>
+                                <span  class="">{{company.Code}}:</span>
+                                <span *ngIf="company.FullName">{{company.FullName}}</span>
+                            </h5>
+                        </td>
+                        <td>
+                            <p>{{company.Contact}} <span></span>
+                                <span *ngIf="company.Mobile"><i class="fa fa-fw fa-whatsapp"></i>{{company.Mobile}} </span>
+                            </p>
+                            <h5>
+                                <span *ngIf="company.Mail"><i class="fa fa-fw fa-envelope-o"></i>{{company.Mail}}</span>
+                                <span *ngIf="company.WebSite"><i class="fa fa-fw fa-internet-explorer"></i>{{company.WebSite}}</span>
+                            </h5>
+                        </td>
+                        <td>
+                            <p *ngIf="company.Country">{{company.Country}}</p>
+                            <h5 *ngIf="company.Address"><i class="fa fa-fw fa-tint"></i>{{company.Address}}</h5>
+                        </td>
+                        <td>
+                            <label *ngIf="company.Status==0" class="btn btn-block btn-outline-link btn-xs btn-flat">Approved</label>
+                            <label *ngIf="company.Status==0" class="btn btn-block btn-outline-link btn-xs btn-flat">Delete</label>
+                            <label *ngIf="company.Status==1" class="btn btn-block btn-outline-link btn-xs btn-flat">UnActive</label>
+                            <label *ngIf="company.Status==1" class="btn btn-block btn-outline-link btn-xs btn-flat">UpGread</label>
+                            <label *ngIf="company.Status==2" class="btn btn-block btn-outline-link btn-xs btn-flat">DownGread</label>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--<div class="box">-->
+        <!--<div class="box-body table-responsive no-padding">-->
+        <!--<table class="table">-->
+        <!--<tbody>-->
+        <!--<tr *ngFor="#company of comService.companyList">-->
+        <!--<td>-->
+        <!--<p>{{company.Name}}</p>-->
+        <!--<p>{{company.FullName}}</p>-->
+        <!--</td>-->
+        <!--<td>{{company.WebSite}}</td>-->
+        <!--<td>{{company.Address}}</td>-->
+        <!--<td>{{company.Country}}</td>-->
+        <!--<td>-->
+        <!--<div class="btn-group">-->
+        <!--<a class="btn btn-primary" (click)="onViewItemClick(company._id)"><i class="icon_plus_alt2"></i></a>-->
+        <!--<a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>-->
+        <!--<a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>-->
+        <!--</div>-->
+        <!--</td>-->
+        <!--</tr>-->
+
+        <!--</tbody>-->
+        <!--</table>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>

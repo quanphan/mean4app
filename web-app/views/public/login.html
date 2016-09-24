@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="loginform  center-block">
+        <h1>Login</h1>
+        <form role="form" (ngSubmit)="login()" [formGroup]="myForm">
+            <div class="form-group">
+                <!--<label for="username">Username</label>-->
+                <!--<input type="text" #username class="form-control" id="username" placeholder="Username">-->
+                <ng2-Input class="ng-block"  ngLabel="User name or Email"  [(bindModelData)]="User.username"
+                           [control]="myForm.controls.username"></ng2-Input>
+            </div>
+            <div class="form-group">
+                <!--<label for="password">Password</label>-->
+                <!--<input type="password" #password class="form-control" id="password" placeholder="Password">-->
+                <ng2-Input  class="ng-block"  ngLabel="Password"  [(bindModelData)]="User.password"
+                            [control]="myForm.controls.password"></ng2-Input>
+            </div>
+
+            <button type="submit" class="btn btn-default" [disabled]="!myForm.valid">Submit</button>
+
+            <div class="login-description">
+                <span><a href="#">Forgot your password</a></span><br>
+                <span><a href="#">Register a new account</a></span>
+            </div>
+            <div *ngIf="LoginError">
+                <span class="alerterror">You have entered an invalid email or password. Please try again</span>
+            </div>
+
+        </form>
+    </div>
+</div>

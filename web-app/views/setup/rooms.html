@@ -1,0 +1,276 @@
+<div class="row">
+    <div class="col-lg-12">
+        <section class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li  class="active">
+                    <a data-toggle="tab" href="#recent-activity">
+                        Room list
+                    </a>
+                </li>
+                <li >
+                    <a data-toggle="tab" href="#profile">
+                        Room type
+                    </a>
+                </li>
+                <li >
+                    <a data-toggle="tab" href="#edit-profile">
+                        Room description
+                    </a>
+                </li>
+            </ul>
+            <div class="">
+                <div class="tab-content" >
+                    <!--room list-->
+                    <div id="recent-activity" class="tab-pane active"  >
+                        <div class="box-form">
+                            <div class="box-header">
+                                <button *ngIf="!addActive" class="btn-i btn-outline-link btn-xs btn-flat" (click)="newRoom()">New room</button>
+                                <ng2-Search *ngIf="!addActive" class="col-md-8 fload-right" ngLabel="Search for" (onSearch)="onSearch()"
+                                            [(bindModelData)]="roomFileter"></ng2-Search>
+
+                                <form class="col-md-12 fload-right" *ngIf="addActive" role="form" (ngSubmit)="onSubmit()" style="margin-bottom: 5px">
+                                    <div class="box-form" style="margin-bottom: 0px">
+                                        <div class="box-body">
+
+                                            <div class="row">
+                                                <ng2-Input class="col-md-2"  ngLabel="RoomNo"  [(bindModelData)]="roomSelete.RoomNo"></ng2-Input>
+                                                <ng2-select class="col-md-2" ngLabel="Type" [values]="setupService.roomTypeList" dataValue='Code' dataText='Name'
+                                                            [(bindModelData)]="roomSelete.Type" ></ng2-select>
+                                                <ng2-select class="col-md-2" ngLabel="Description" [values]="setupService.roomCategoryList" dataValue='Code' dataText='Name'
+                                                            [(bindModelData)]="roomSelete.Category" ></ng2-select>
+                                                <ng2-Input class="col-md-2"  ngLabel="Floor"  [(bindModelData)]="roomSelete.Floor"></ng2-Input>
+                                                <ng2-Input class="col-md-2"  ngLabel="Ext"  [(bindModelData)]="roomSelete.Etx"></ng2-Input>
+                                                <div class="col-md-2 input-group">
+                                                    <button type="submit" class="btn  btn-flat btn-sm fload-right " style="margin-left: 5px">Add</button>
+                                                    <button type="button" class="btn  btn-flat  btn-sm fload-right" (click)="doneSubmit()">Done</button>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="box-body">
+                                <table class="table table-min table-hover">
+                                    <tbody>
+                                    <tr class="table-header">
+                                        <td >
+                                            Room no
+                                        </td>
+                                        <td>
+                                            Type
+                                        </td>
+                                        <td>
+                                            Description
+                                        </td>
+                                        <td>
+                                            Floor
+                                        </td>
+                                        <td>
+                                            Etx
+                                        </td>
+                                    </tr>
+                                    <tr *ngFor="#room of setupService.roomList" (click)="onClick(room)">
+                                        <td>
+                                            <strong><a>{{room.RoomNo}}</a></strong>
+                                        </td>
+                                        <td>
+                                            {{room.Type}}
+                                        </td>
+                                        <td>
+                                            {{room.Category}}
+                                        </td>
+                                        <td>
+                                            {{room.Floor}}
+                                        </td>
+                                        <td>
+                                            {{room.Etx}}
+                                        </td>
+                                        <td>
+                                            <i class="fa fa-fw fa-edit" (click)="edit(room)"></i>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--room type-->
+                    <div id="profile" class="tab-pane" >
+                        <div class="box-form col-lg-12">
+                            <div class="col-lg-6">
+                                <div class="box-header">
+                                    <form class="col-md-12 fload-right" role="form" (ngSubmit)="onRoomTypeSubmit()" style="margin-bottom: 5px">
+                                        <div class="box-form" style="margin-bottom: 0px">
+                                            <div class="box-body">
+                                                <div class="row">
+                                                    <ng2-Input class="col-md-2"  ngLabel="Code"  [(bindModelData)]="roomTypeSelete.Code"></ng2-Input>
+                                                    <ng2-Input class="col-md-6"  ngLabel="Name"  [(bindModelData)]="roomTypeSelete.Name"></ng2-Input>
+                                                    <div class="col-md-4 input-group">
+                                                        <button type="submit" class="btn-i btn-outline-link btn-xs btn-flat fload-right" style="margin-left: 5px">Update</button>
+                                                        <button type="button" class="btn-i btn-outline-link btn-xs btn-flat fload-right" (click)="onNewRoomType()">New</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="box-body">
+                                    <table class="table table-min table-hover">
+                                        <tbody>
+                                        <tr class="table-header">
+                                            <td >
+                                                Code
+                                            </td>
+                                            <td>
+                                                Name
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="#roomtype of setupService.roomTypeList" (click)="roomTypeClick(roomtype)">
+                                            <td>
+                                                <strong><a>{{roomtype.Code}}</a></strong>
+                                            </td>
+                                            <td>
+                                                {{roomtype.Name}}
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="box-header">
+                                    <form class="col-md-12 fload-right" role="form" (ngSubmit)="onRoomCateSubmit()" style="margin-bottom: 5px">
+                                        <div class="box-form" style="margin-bottom: 0px">
+                                            <div class="box-body">
+                                                <div class="row">
+                                                    <ng2-Input class="col-md-2"  ngLabel="Code"  [(bindModelData)]="roomCateSelete.Code"></ng2-Input>
+                                                    <ng2-Input class="col-md-6"  ngLabel="Name"  [(bindModelData)]="roomCateSelete.Name"></ng2-Input>
+                                                    <div class="col-md-4 input-group">
+                                                        <button type="submit" class="btn-i btn-outline-link btn-xs btn-flat fload-right" style="margin-left: 5px">Update</button>
+                                                        <button type="button" class="btn-i btn-outline-link btn-xs btn-flat fload-right" (click)="onNewRoomCate()">New</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div class="box-body">
+                                    <table class="table table-min table-hover">
+                                        <tbody>
+                                        <tr class="table-header">
+                                            <td >
+                                                Code
+                                            </td>
+                                            <td>
+                                                Name
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="#roomcate of setupService.roomCategoryList" (click)="roomCateClick(roomcate)">
+                                            <td>
+                                                <strong><a>{{roomcate.Code}}</a></strong>
+                                            </td>
+                                            <td>
+                                                {{roomcate.Name}}
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- rate -->
+                    <div id="edit-profile" class="tab-pane" >
+                        <div class="box-form">
+                            <div class="box-header">
+                                <form class="col-md-12 fload-right" role="form" (ngSubmit)="onRateSubmit()" style="margin-bottom: 5px">
+                                    <div class="box-form" style="margin-bottom: 0px">
+                                        <div class="box-body">
+                                            <div  class="row">
+                                                <ng2-select class="col-md-2" ngLabel="Rate type" [values]="setupService.rateType" dataValue='Code' dataText='Name'
+                                                            [(bindModelData)]="roomSelete.Category" ></ng2-select>
+                                                <div class="col-md-4 input-group">
+                                                    <button type="submit" class="btn-i btn-outline-link btn-xs btn-flat" style="margin-left: 5px">Update</button>
+                                                    <button type="button" class="btn-i btn-outline-link btn-xs btn-flat" (click)="onNewRate()">New</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <ng2-Input class="col-md-1"  ngLabel="Code"  [(bindModelData)]="rateSelete.Code"></ng2-Input>
+                                                <ng2-Input class="col-md-2"  ngLabel="Name"  [(bindModelData)]="rateSelete.Name"></ng2-Input>
+                                                <ng2-select class="col-md-2" ngLabel="Room ype" [values]="setupService.roomTypeList" dataValue='Code' dataText='Name'
+                                                            [(bindModelData)]="roomSelete.Category" ></ng2-select>
+                                                <ng2-select class="col-md-2" ngLabel="Room description" [values]="setupService.roomCategoryList" dataValue='Code' dataText='Name'
+                                                            [(bindModelData)]="roomSelete.Category" ></ng2-select>
+
+                                                <ng2-Input class="col-md-1"  ngLabel="Rate USD"  [(bindModelData)]="rateSelete.Rate"></ng2-Input>
+                                                <ng2-Input class="col-md-2"  ngLabel="Rate VND"  [(bindModelData)]="rateSelete.RateVND"></ng2-Input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="box-body">
+                                <table class="table table-min table-hover">
+                                    <tbody>
+                                    <tr class="table-header">
+                                        <td >
+                                            Code
+                                        </td>
+                                        <td>
+                                            Name
+                                        </td>
+                                        <td>
+                                            Room type
+                                        </td>
+                                        <td>
+                                            Room description
+                                        </td>
+                                        <td>
+                                            Rate type
+                                        </td>
+                                        <td>
+                                            Rate USD
+                                        </td>
+                                        <td>
+                                            Rate VND
+                                        </td>
+                                    </tr>
+                                    <tr *ngFor="#rate of setupService.rates" (click)="rateClick(rate)">
+                                        <td>
+                                            <strong><a>{{rate.Code}}</a></strong>
+                                        </td>
+                                        <td>
+                                            {{rate.Name}}
+                                        </td>
+                                        <td>
+                                            {{rate.RoomType}}
+                                        </td>
+                                        <td>
+                                            {{rate.RoomCategory}}
+                                        </td>
+                                        <td>
+                                            {{rate.RateType}}
+                                        </td>
+                                        <td>
+                                            {{rate.Rate}}
+                                        </td>
+                                        <td>
+                                            {{rate.RateVND}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

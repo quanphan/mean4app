@@ -1,0 +1,265 @@
+<div >
+    <div class="row col-lg-8">
+        <h5>An online template which can help you rapidly develop business activity in your hotel.
+            It has a lot of useful components to reduce the burden of your management working.</h5>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 padding-r5">
+            <div class="input-panel">
+                <div class="input-panel-header box-header">
+                    <div class="col-md-4">
+                        <h3 class="box-title ng-input">Reservation info</h3>
+                    </div>
+
+                    <div class="box-tools">
+                        <a class="btn btn-sm btn-flat btn-default">
+                            <i class="fa fa-users"></i> Vao nhom
+                        </a>
+                        <a class="btn btn-sm btn-flat btn-default">
+                            <i class="fa fa-edit"></i> Tach nhom
+                        </a>
+                        <a class="btn btn-sm btn-flat btn-default">
+                            <i class="fa fa-edit"></i> Booking info
+                        </a>
+                    </div>
+
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <ng2-Input class="col-md-4"  ngLabel="Room no"  [(bindModelData)]="res.RoomNo"></ng2-Input>
+                            <ng2-Input class="col-md-8"  ngLabel="Room type"  [(bindModelData)]="res.RoomType"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 rowWithFullWidth">
+                                <ng2-Input class="col-md-8"  ngLabel="From date"  [(bindModelData)]="res.FromDate"></ng2-Input>
+                                <ng2-Input class="col-md-4"  ngLabel="Time in"  [(bindModelData)]="res.TimeIn"></ng2-Input>
+                            </div>
+                            <div class="col-md-6 rowWithFullWidth">
+                                <ng2-Input class="col-md-8"  ngLabel="To date"  [(bindModelData)]="res.ToDate"></ng2-Input>
+                                <ng2-Input class="col-md-4"  ngLabel="Time out"  [(bindModelData)]="res.TimeOut"></ng2-Input>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Guest info-->
+            <div class="input-panel margin-t5">
+                <div class="input-panel-header box-header">
+                    <div class="col-md-4 padding-t10">
+                        <span class="box-title ng-input">Guest info</span>
+                    </div>
+
+                    <div class="box-tools" style="width: 250px">
+                        <ng2-select  ngLabel="Company" [values]="companyList" dataValue='value' dataText='label' ngShowLable="false"
+                                     [(bindModelData)]="res.CompanyID"></ng2-select>
+                    </div>
+
+                </div>
+                <div class="panel-body">
+                    <div class="box-gird">
+                        <div class="box-body">
+                            <table class="table table-min table-hover">
+                                <tbody>
+                                <tr class="table-header">
+
+                                    <td>
+                                        Ten khach
+                                    </td>
+                                    <td>
+                                        Ngay sinh
+                                    </td>
+                                    <td>
+                                        Pasport
+                                    </td>
+                                    <td>
+                                        Quoc tich
+                                    </td>
+                                    <td>
+                                        Nguoi lon
+                                    </td>
+
+                                </tr>
+                                <tr *ngFor="#guest of guestList" (click)="onGuestClick(guest)">
+
+                                    <td>
+                                        {{guest.Name}}
+                                    </td>
+                                    <td>
+                                        {{guest.Brithday}}
+                                    </td>
+                                    <td>
+                                        {{guest.Pasport}}
+                                    </td>
+                                    <td>
+                                        {{guest.National}}
+                                    </td>
+                                    <td>
+                                        {{guest.Type}}
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-fw fa-edit" (click)="edit(guest)"></i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="col-md-12">
+                            <span class="box-title">Chi tiet: <i class="fa fa-fw fa-sort-down"></i></span>
+                            <button class="btn-i btn-outline-link btn-xs btn-flat fload-right" (click)="newGuest()">Them nguoi lon</button>
+                            <button class="btn-i btn-outline-link btn-xs btn-flat fload-right" (click)="newGuest()">Them tre em</button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <ng2-Input class="col-md-8"  ngLabel="Guest name"  [(bindModelData)]="guestSeleted.Name"></ng2-Input>
+                            <ng2-Input class="col-md-4"  ngLabel="Made"  [(bindModelData)]="guestSeleted.Made"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <ng2-Input class="col-md-6"  ngLabel="Brithday"  [(bindModelData)]="guestSeleted.Brithday"></ng2-Input>
+                            <ng2-Input class="col-md-6"  ngLabel="Phone"  [(bindModelData)]="guestSeleted.Brithday"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <ng2-Input class="col-md-8"  ngLabel="Pasport"  [(bindModelData)]="guestSeleted.Pasport"></ng2-Input>
+                            <ng2-Input class="col-md-4"  ngLabel="Date"  [(bindModelData)]="guestSeleted.Pasport"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <ng2-Input class="col-md-8"  ngLabel="National"  [(bindModelData)]="guestSeleted.National"></ng2-Input>
+                            <ng2-Input class="col-md-4"  ngLabel="Nuoc ngoai"  [(bindModelData)]="guestSeleted.National"></ng2-Input>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <ng2-Input class="col-md-12"  ngLabel="Ngay nhap canh"  [(bindModelData)]="guestSeleted.Name"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <ng2-Input class="col-md-12"  ngLabel="Ngay het han"  [(bindModelData)]="guestSeleted.Brithday"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <ng2-Input class="col-md-12"  ngLabel="Cua khau"  [(bindModelData)]="guestSeleted.Pasport"></ng2-Input>
+                        </div>
+                        <div class="row">
+                            <ng2-Input class="col-md-12"  ngLabel="National"  [(bindModelData)]="guestSeleted.National"></ng2-Input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 padding-l5">
+            <section class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a data-toggle="tab" href="#recent-activity">
+                            <i class="icon-home"></i>
+                            Payment info
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#profile">
+                            <i class="icon-user"></i>
+                            Option
+                        </a>
+                    </li>
+                </ul>
+                <div class="">
+                    <!--Payment-->
+                    <div class="tab-content" >
+                        <div id="recent-activity" class="tab-pane active" >
+                            <div class="input-panel col-lg-12">
+                                <div class="row">
+                                    <ng2-select class="col-md-12" ngLabel="Rate type" [values]="commonService.rateType" dataValue='Code' dataText='Name'
+                                                [(bindModelData)]="res.RateType" ></ng2-select>
+                                </div>
+                                <div class="row">
+                                    <ng2-select class="col-md-12" ngLabel="Rate type" [values]="commonService.rates" dataValue='Code' dataText='Name'
+                                                [(bindModelData)]="res.RateCode" ></ng2-select>
+                                </div>
+                                <div class="row">
+                                    <ng2-select class="col-md-4" ngLabel="Currency" [values]="commonService.currencys" dataValue='Code' dataText='Name'
+                                                [(bindModelData)]="res.Currency" ></ng2-select>
+                                    <ng2-Input class="col-md-8"  ngLabel="Rate"  [(bindModelData)]="res.Rate"></ng2-Input>
+                                </div>
+                                <div class="row">
+                                    <ng2-Input class="col-md-4"  ngLabel="Discount"  [(bindModelData)]="res.Discount"></ng2-Input>
+                                    <ng2-Input class="col-md-8" disabled="true"  ngLabel="Money"  [(bindModelData)]="res.RateIn"></ng2-Input>
+                                </div>
+                                <div class="row">
+                                    <ng2-Input class="col-md-8" disabled="true"  ngLabel="Rate in"  [(bindModelData)]="res.RateIn"></ng2-Input>
+                                </div>
+                                <div class="row padding-t10">
+                                    <div class="col-md-4">
+                                        <span class="box-title ng-input">Tax option</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <ng2-togglebutton ngLabelYes="Net" ngLabelNo="Gross" ngItemWidth="60px"></ng2-togglebutton>
+                                    </div>
+                                </div>
+
+                                <div class="row padding-t10">
+                                    <div class="col-md-12">
+                                        <ng2-checkbox class="" ngLabel="IsVat"></ng2-checkbox>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ng2-checkbox class="" ngLabel="Is service"></ng2-checkbox>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Option-->
+                        <div id="profile" class="tab-pane" >
+                            <div class="input-panel col-lg-12">
+                                <div class="row padding-t10">
+                                    <div class="col-md-12">
+                                        <ng2-checkbox class="" ngLabel="Extra bed"></ng2-checkbox>
+                                        <div class="row">
+                                            <ng2-Input class="col-md-4"  ngLabel="Qty"  [(bindModelData)]="res.Discount"></ng2-Input>
+                                            <ng2-Input class="col-md-8" disabled="true"  ngLabel="Rate "  [(bindModelData)]="res.RateIn"></ng2-Input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ng2-checkbox class="" ngLabel="Bosnus to sale"></ng2-checkbox>
+                                        <div class="row">
+                                            <ng2-Input class="col-md-4"  ngLabel="Saler"  [(bindModelData)]="res.Discount"></ng2-Input>
+                                            <ng2-Input class="col-md-8" disabled="true"  ngLabel="Money "  [(bindModelData)]="res.RateIn"></ng2-Input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ng2-checkbox class="" ngLabel="Extra person"></ng2-checkbox>
+                                        <div class="row">
+                                            <ng2-Input class="col-md-4"  ngLabel="Qty"  [(bindModelData)]="res.Discount"></ng2-Input>
+                                            <ng2-Input class="col-md-8" disabled="true"  ngLabel="Rate "  [(bindModelData)]="res.RateIn"></ng2-Input>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="margin-b5">
+                <div class="input-panel col-md-12 margin-t10">
+                    <div class="row padding-t10">
+                        <ng2-checkbox class="col-md-12" ngLabel="Checkin now"></ng2-checkbox>
+                        <ng2-checkbox class="col-md-12" ngLabel="Print not rate"></ng2-checkbox>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 margin-tb15">
+                            <button class="btn btn-flat btn-success col-md-4">CheckIn</button>
+                            <button class="btn btn-flat btn-info col-md-4">Print</button>
+                            <button class="btn btn-flat btn-warning col-md-4">Exit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

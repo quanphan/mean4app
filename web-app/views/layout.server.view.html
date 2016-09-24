@@ -1,0 +1,54 @@
+<html>
+<head>
+	<base href="/">
+	<title>Hotel help center!!!!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 1. Load libraries -->
+	<!-- IE required polyfills, in this exact order -->
+	<script src="node_modules/es6-shim/es6-shim.min.js"></script>
+
+	<script src="node_modules/core-js/client/shim.min.js"></script>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/rxjs/bundles/Rx.js"></script>
+	<script src="node_modules/traceur/bin/traceur.js"></script>
+	<!-- test -->
+
+	<!-- jQuery 2.1.4 -->
+	<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<!-- Bootstap -->
+	<script src="src/bootstrap/js/bootstrap.min.js"></script>
+	<!-- FastClick -->
+	<script src="plugins/fastclick/fastclick.min.js"></script>
+	<!-- app -->
+	<script src="src/js/app.js"></script>
+
+	<!-- custom script for this page-->
+	<!-- 2. Configure SystemJS -->
+	<script src="systemjs.config.js"></script>
+
+	<script>
+		System.import('app/boot')
+				.then(null, console.error.bind(console));
+	</script>
+
+	<link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="src/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="src/css/app.css">
+	<link rel="stylesheet" href="src/css/style.css">
+	<link rel="stylesheet" href="src/css/app-component.css">
+	<link rel="stylesheet" href="src/css/skins/_all-skins.css">
+	<link rel="stylesheet" href="src/css/temp.css">
+</head>
+
+<!-- 3. Display the application -->
+<body class="hold-transition skin-blue">
+<my-app>Loading...</my-app>
+</body>
+</html>

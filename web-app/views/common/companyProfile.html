@@ -1,0 +1,77 @@
+
+<div class="row">
+    <!-- profile-widget -->
+    <div class="col-lg-12">
+        <div class="">
+            <div class="panel-body">
+                <div class="col-lg-3 col-sm-4">
+                    <div class="follow-ava text-center">
+                        <img class="img-responsive img-circle" src="img/user4-128x128.jpg" alt="">
+                    </div>
+                    <h4 class="profile-username text-center">{{comService.company.Name}}</h4>
+                    <h6 class="text-center">{{comService.company.Leved}}</h6>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <p>{{comService.company.Description}}</p>
+                    <p *ngIf="comService.company.Contact"><i class="fa fa-twitter"></i>{{ comService.company.Contact}}
+                        <span *ngIf="comService.company.Mobile"><i class="fa fa-fw fa-whatsapp"></i>{{ comService.company.Mobile}} </span>
+                    </p>
+                    <p *ngIf="comService.company.WebSite"><i class="fa fa-fw fa-internet-explorer"></i>{{ comService.company.WebSite}}</p>
+                    <p *ngIf="comService.company.Mail"><i class="fa fa-fw fa-envelope-o"></i>{{ comService.company.Mail}}</p>
+                    <p *ngIf="comService.company.Address"><i class="fa fa-fw fa-street-view"></i>{{ comService.company.Address}}, {{ comService.company.State}}</p>
+                    <h6 *ngIf="comService.company._id">
+                        <span><i class="fa fa-fw fa-clock-o"></i>11:05 AM</span>
+                        <span><i class="fa fa-fw fa-calendar"></i>25.10.13</span>
+                    </h6>
+                </div>
+                <div class="col-lg-3 col-sm-2">
+                    Contrary to popular belief, Lorem Ipsum is not simply
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page start-->
+<div class="row">
+    <div class="col-lg-12">
+        <section class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li [class.active]="comService.company._id" *ngIf="comService.company._id">
+                    <a data-toggle="tab" href="#recent-activity">
+                        <i class="icon-home"></i>
+                        Activity
+                    </a>
+                </li>
+                <li *ngIf="comService.company._id">
+                    <a data-toggle="tab" href="#profile">
+                        <i class="icon-user"></i>
+                        Profile
+                    </a>
+                </li>
+                <li [class.active]="!comService.company._id">
+                    <a data-toggle="tab" href="#edit-profile">
+                        <i class="icon-envelope"></i>
+                        {{editTytle}}
+                    </a>
+                </li>
+            </ul>
+            <div class="">
+                <div class="tab-content" >
+                    <div id="recent-activity" class="tab-pane" [class.active]="comService.company._id" *ngIf="comService.company._id">
+                        <com-hictory></com-hictory>
+                    </div>
+                    <!-- profile -->
+                    <div id="profile" class="tab-pane" *ngIf="comService.company._id">
+                        <com-view [company]="comService.company"></com-view>
+                    </div>
+                    <!-- edit-profile -->
+                    <div id="edit-profile" class="tab-pane" [class.active]="!comService.company._id">
+                        <com-edit [comp]="comService.company"></com-edit>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- page end-->

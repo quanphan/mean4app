@@ -1,0 +1,22 @@
+<section class="row content-header">
+    <div class="col-lg-3 col-md-4">
+        <span class="page-title">
+            {{authService.pageTitle}}
+        </span>
+    </div>
+    <div  class="col-lg-9">
+        <div class="nav-page fload-right">
+            <ul class="page-link">
+                <li><a [routerLink]="['user']" class="bt-link" >User manage</a></li>
+                <li><p class="line-link">|</p></li>
+                <li><a [routerLink]="['room']" class="bt-link" >Room </a></li>
+                <li><p>|</p></li>
+                <li><a  [routerLink]="['package']" class="bt-link" >Packages</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<router-outlet>
+
+</router-outlet>

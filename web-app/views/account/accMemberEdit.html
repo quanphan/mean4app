@@ -1,0 +1,52 @@
+<div class="subpage-container row">
+    <div class="col-md-12" style="margin-bottom: 15px">
+        <h3 class="header">Edit Member</h3>
+        <h4>An online template which can help you rapidly develop business activity in your hotel.
+            It has a lot of useful components to reduce the burden of your management working.
+        </h4>
+    </div>
+
+    <div class="col-md-12">
+        <div class="box-form ">
+            <div class="box-header with-border">
+
+            </div><!-- /.box-header -->
+
+            <!-- form start -->
+            <form  (ngSubmit)="onSubmit()"   [formGroup]="myForm">
+                    <div class="box-body">
+                    <div class="col-md-12">
+                        <h4 class="box-title">Infomations</h4>
+                    </div>
+                   <div class="col-md-6">
+                       <ng2-Input class="ng-block "  ngLabel="Name"  [(bindModelData)]="accService.account.Name" maxLength="20"
+                                  [control]="myForm.controls.Name" ></ng2-Input>
+
+                       <ng2-Input class="ng-block" ngLabel="FullName" [(bindModelData)]="accService.account.DislayName"
+                                  [control]="myForm.controls.FullName"></ng2-Input>
+
+                       <ng2-Input ngMask="(1111)111-111"  class="ng-block" ngLabel="Mobile" [(bindModelData)]="accService.account.Mobile"
+                       ></ng2-Input>
+
+                       <ng2-Input class="ng-block"  ngLabel="Mail" [(bindModelData)]="accService.account.Email"
+                                  [control]="myForm.controls.Mail"></ng2-Input>
+
+                       <ng2-Input class="ng-block"  ngLabel="Address" [(bindModelData)]="accService.account.Address"
+                       ></ng2-Input>
+                   </div>
+                    <div class="col-md-6">
+                        <ng2-Input class="ng-block"  ngLabel="RollName" [(bindModelData)]="accService.account.RollName"
+                        ></ng2-Input>
+
+                    </div>
+
+                </div><!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary fload-right" [disabled]="!myForm.valid">Submit</button>
+                </div>
+            </form>
+        </div><!-- /.box -->
+    </div>
+
+</div>

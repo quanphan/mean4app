@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-gird-view">
+            <div *ngFor="let acc of accService.accountRolsList" class="col-lg-6 col-md-12">
+                <div class="widget deitem">
+                    <div class="header">
+                        <h5 class="timeline-header text-uppercase">
+                            {{acc.Name}}
+                        </h5>
+                        <div class="widget-controls">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                        </div>
+                    </div>
+                    <div class="widget-body">
+                        <p>You will never know exactly how something will go until you try it. You can
+                            think three hundred times and still have no precise result.
+                        </p>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <h6 class="name fs-sm">Admin</h6>
+                                <p class="value">{{acc.Admin}}</p>
+                            </div>
+                            <div class="stat-item">
+                                <h6 class="name fs-sm">Delegate</h6>
+                                <p class="value">{{acc.Delegate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

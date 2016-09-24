@@ -1,0 +1,41 @@
+<!--<label class="ng-label" [class.has-active]="_focused">{{ngLabel}}</label>-->
+<!--<div class="input-group btn-block">-->
+    <!--<input type={{type}} placeholder="Enter the {{ngLabel}}"-->
+           <!--class="ng-input"-->
+           <!--(focus)="openDatepicker()"-->
+           <!--[value]="viewValue"-->
+           <!--[hidden]="isStatic"-->
+           <!--readonly>-->
+    <!--<span class="input-group-addon" [class.ng-input-active]="_focused" (click)="openDatepicker()"><i class="fa fa-fw fa-calendar"></i></span>-->
+<!--</div>-->
+
+<!--<div class="ng-datepicker" *ngIf="isStatic || isOpened" [ngClass]="{ static: isStatic }">-->
+    <!--<div class="controls">-->
+        <!--<div class="left">-->
+            <!--<i class="fa fa-backward prev-year-btn" (click)="prevYear()"></i>-->
+            <!--<i class="fa fa-angle-left prev-month-btn" (click)="prevMonth()"></i>-->
+        <!--</div>-->
+      <!--<span class="date">-->
+        <!--{{ dateValue }}-->
+      <!--</span>-->
+        <!--<div class="right">-->
+            <!--<i class="fa fa-angle-right next-month-btn" (click)="nextMonth()"></i>-->
+            <!--<i class="fa fa-forward next-year-btn" (click)="nextYear()"></i>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="day-names">-->
+        <!--<div *ngFor="#dn of dayNames">-->
+            <!--<span >{{ dn }}</span>-->
+        <!--</div>-->
+        <!--<div class="clearfix">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="calendar">-->
+        <!--<span *ngFor="#d of days; #i = index;">-->
+            <!--<span class="day dayitem" [ngClass]="{'disabled': !d.enabled, 'selected': isSelected(d)}" (click)="selectDate($event, d)">-->
+                <!--{{ d.day }}-->
+            <!--</span>-->
+        <!--</span>-->
+    <!--</div>-->
+<!--</div>-->

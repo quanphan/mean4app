@@ -1,0 +1,51 @@
+<div class="row ng-form1">
+    <div class="col-lg-12 padding-0">
+        <div class="box-gird1">
+            <div class="box-header">
+                <div class="input-group">
+                    <button class="btn-i btn-outline-link btn-xs btn-flat">Top new</button>
+                    <button class="btn-i btn-outline-link btn-xs btn-flat">Top revenue</button>
+                    <button class="btn-i btn-outline-link btn-xs btn-flat">Top booking</button>
+                </div>
+                <div class="box-tools">
+                    <span>Room select:{{resSelect.RoomNo}} || From: {{resSelect.FromDate}} || To: {{resSelect.ToDate}}</span>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-plan">
+                    <tbody>
+                    <tr class="">
+                        <td colspan="2" >Date</td>
+                        <td *ngFor="#m of yearMonth" [attr.colspan]="m.days">{{m.month}}</td>
+                    </tr>
+                    <tr >
+                        <td width="15" class="roomItem cell-header roomItem-firt">Name</td>
+                        <td width="10" class="roomItem cell-header">No</td>
+                        <td *ngFor="#item of dates" class="roomItem" [class.yesterday]="item.day==yesterday">{{item.day}}</td>
+                    </tr>
+
+                    <tr *ngFor="#room of rooms" [attr.data-row]="room.RoomNo">
+                        <td class="roomItem roomItem-firt" >{{room.Type}}</td>
+                        <td class="roomItem">{{room.RoomNo}}</td>
+
+                        <template ngFor #item [ngForOf]="dates">
+                            <td *ngIf="checkDateUISelect(room.RoomNo,item)" class="roomItem planConten cell-item" [class.yesterday]="item.day==yesterday"
+                                [attr.colspan]="setResUI(room.RoomNo,item)"
+                                [attr.data-id]="room.RoomNo"  [attr.data-col]="item.day" >
+
+                                <room-item class="room-item"  [class.room-select]="IsSelectRoom(room.RoomNo,item)" (click)="resItem(room.RoomNo,item)"
+                                           [class.res-in]="CheckStatusRoom(room.RoomNo,item,3)"
+                                           [class.res-out]="CheckStatusRoom(room.RoomNo,item,4)"
+                                           [class.res-re]="CheckStatusRoom(room.RoomNo,item,1)"
+                                           [room]="room.RoomNo" [date]="item" [(ngRoom)]="resSelect" (ngResSelected)="resSelected()" [ngRes]="GetRes(room.RoomNo,item)">
+                                </room-item>
+                            </td>
+                        </template>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
