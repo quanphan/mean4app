@@ -1,0 +1,32 @@
+
+<section data-ng-controller="SaleController">
+	<div class="page-header">
+		<h1>Companys</h1>
+	</div>
+	<div class="gridStyle" ng-grid="gridOptions"></div>
+
+    <!-- <app-select  data-options="company" 
+  data-change-callback="callback(value)"></app-select> -->
+
+
+<ng-dropdown data-menu-type="button" selected-model="ActionID" item-list="statuses" value="id" text="name"></ng-dropdown> 
+
+Selected Value : {{ActionID}}
+
+<div ng-dropdown-multiselect="" options="statusesM" selected-model="statusesMm" extra-settings="statusesMsettings"</div>
+
+<ng-datetime select-model="mydate"></ng-datetime>
+
+<div ng-controller="abc">
+  <div my-customer></div>
+</div>
+
+</section>
+
+
+<style>
+	.gridStyle {
+    border: 1px solid rgb(212,212,212);  
+    height: 300px
+}
+</style>

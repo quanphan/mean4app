@@ -1,0 +1,11 @@
+<div class="btn-group " dropdown is-open="status.isopen">
+	<button class="btn button-label btn-info">Action</button>
+	<button class="btn btn-info dropdown-toggle" data-toggle="dropdown" dropdown-toggle ng-disabled="disabled">
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		<li ng-repeat="item in itemList">
+			<a data-ng-click="selectVal(item)">{{item.name}}</a>
+		</li>
+	</ul>
+</div>

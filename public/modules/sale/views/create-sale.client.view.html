@@ -1,0 +1,79 @@
+<section data-ng-controller="SaleController">
+	<div class="page-header">
+		<h1>Công ty - tổ chức </h1>
+	</div>
+	<div class="col-md-12">
+		<form name="comForm" class="form-horizontal" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+					<label class="control-label col-xs-12 col-sm-3" for="code">Mã đơn vị </label>
+					<div class="controls col-xs-12 col-sm-9">
+						<input name="code" type="text" data-ng-model="code" id="code" class="form-control" placeholder="code" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+					<label class="control-label col-xs-3" for="name">Tên giao dịch </label>
+					<div class="controls col-xs-9">
+						<input name="name" type="text" data-ng-model="name" id="name" class="form-control" placeholder="Tên giao dịch" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+					<label class="control-label col-xs-3" for="namefull">Tên đầy đủ </label>
+					<div class="controls col-xs-9">
+						<input name="namefull" type="text" data-ng-model="namefull" id="namefull" class="form-control" placeholder="Tên đầy đủ" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+					<label class="control-label col-xs-12 col-sm-3" for="address">Địa chỉ</label>
+					<div class="controls col-xs-12 col-sm-9">
+						<input name="address" type="text" data-ng-model="address" id="address" class="form-control" placeholder="Dia chi" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-6">
+						<div class="form-group " ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+							<label class="control-label col-sm-3" for="taxcode">Mã số thuế</label>
+							<div class="controls col-sm-9">
+								<input name="taxcode" type="text" data-ng-model="taxcode" id="taxcode" class="form-control" placeholder="Mã số thuế" required>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+							<label class="control-label col-sm-3" for="bankno">Tài khoản NH</label>
+							<div class="controls col-sm-9">
+								<input name="bankno" type="text" data-ng-model="bankno" id="bankno" class="form-control" placeholder="Số tài khoản" required>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+							<label class="control-label col-sm-3" for="bankno">Phân loại </label>
+							<div class="controls col-sm-9">
+								<ng-dropdown data-menu-type="button" selected-model="ActionID" item-list="statuses" value="id" text="name"></ng-dropdown>
+							</div>
+						</div>
+					</div>	
+					<div class="col-sm-6">
+						<div class="form-group" ng-class="{ 'has-error': comForm.title.$dirty && comForm.title.$invalid }">
+							<label class="control-label col-sm-3" for="bankno">Thị trường </label>
+							<div class="controls col-sm-9">
+								<ng-dropdown data-menu-type="button" selected-model="ActionID" item-list="statuses" value="id" text="name"></ng-dropdown>
+							</div>
+						</div>
+					</div>									
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="content">Ghi chú </label>
+					<div class="controls">
+						<textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
