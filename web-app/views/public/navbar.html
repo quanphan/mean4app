@@ -26,7 +26,8 @@
             </a>
         </li>
 
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a ><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a [routerLink]="['/demo']"><i class="fa fa-book"></i> <span>Demo</span></a></li>
 
         <li class="header">My Module</li>
         <li  *ngFor= "let menu of authentication.menus"

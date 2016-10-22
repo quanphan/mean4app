@@ -36,7 +36,7 @@ import {BookingComponent} from "./components/common/booking.component";
 import {ProfileComponent} from "./components/account/profile.component";
 import {MailboxComponent} from "./components/puclic/mailbox.component";
 import {PricingComponent} from "./components/home/pricing.component";
-
+import {DemoComponent} from "./components/home/demo.component";
 
 import {ReservationCanDeactivateGuard} from "./components/reservation/reservationCanDeactivate.Guard";
 import {AuthGuard} from "./canActive"
@@ -64,7 +64,7 @@ enableProdMode();
         HomeComponent,AboutComponent,ContactComponent,MailboxComponent,
         HeaderComponent,NavbarComponent,
         LoginComponent,ProfileComponent,PricingComponent,
-        DashboardComponent,BookingComponent,
+        DashboardComponent,BookingComponent,DemoComponent,
 
     ],
     providers: [

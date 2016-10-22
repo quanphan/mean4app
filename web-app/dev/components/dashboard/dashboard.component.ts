@@ -31,33 +31,5 @@ export class DashboardComponent {
 
     }
 
-    test="";
-    test1="2016-07-12";
-    public companyList=[
-        {value:'1',label:" Success software"},
-        {value:'2',label:" Aperia Solutions software"},
-        {value:'3',label:" Kobe"},
-        {value:'4',label:" Apple Computer"},
-    ];
-
-    public typeList=[
-        {value:'1',label:" Type 1"},
-        {value:'2',label:" Type 2"},
-        {value:'3',label:" Type 3"},
-        {value:'4',label:" Type 4"},
-    ];
-    public type = {value:'1',label:"Type 1"};
-
-    public comp = {ID:'1',label:"abc", type:'1',value:'12345678',phone:'09887654321' };
-
-
-
-    dropItems= [ {id: 1, text: 'Item1'}, {id: 2, text:'Item2'} ];
-    selected= [ {id: 2} ];
-    selOut;
-
-    onUpdate(ev) {
-        this.selOut = ev;
-    }
 
 }

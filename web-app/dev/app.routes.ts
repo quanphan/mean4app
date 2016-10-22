@@ -14,7 +14,7 @@ import {BookingComponent} from "./components/common/booking.component";
 import {ProfileComponent} from "./components/account/profile.component";
 import {MailboxComponent} from "./components/puclic/mailbox.component";
 import {PricingComponent} from "./components/home/pricing.component";
-
+import {DemoComponent} from "./components/home/demo.component";
 
 import {ReservationCanDeactivateGuard} from "./components/reservation/reservationCanDeactivate.Guard";
 import {AuthGuard} from "./canActive"
@@ -27,6 +27,7 @@ const routes: Routes = [
     {path:'contact', name: 'Contact', component:ContactComponent },
     {path:'pricing',name:'Pricing',component:PricingComponent},
     {path:'dashboard', name: 'Dashboard', component:DashboardComponent ,canActivate: [AuthGuard]},
+    {path:'demo',name:'Demo',component:DemoComponent},
     {path:'booking', name: 'Booking', component:BookingComponent ,canActivate: [AuthGuard]},
     {path:'mailbox', name: 'Mailbox', component:MailboxComponent ,canActivate: [AuthGuard]},
     {path:'profile', name: 'Profile', component:ProfileComponent ,canActivate: [AuthGuard]},
