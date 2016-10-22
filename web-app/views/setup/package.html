@@ -41,7 +41,7 @@
                         </td>
 
                     </tr>
-                    <tr *ngFor="#package of setupService.packages" (click)="onClick(package)">
+                    <tr *ngFor="let package of setupService.packages" (click)="onClick(package)">
                         <td>
                             <strong><a>{{package.Code}}</a></strong>
                         </td>

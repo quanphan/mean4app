@@ -72,7 +72,7 @@
                                             Etx
                                         </td>
                                     </tr>
-                                    <tr *ngFor="#room of setupService.roomList" (click)="onClick(room)">
+                                    <tr *ngFor="let room of setupService.roomList" (click)="onClick(room)">
                                         <td>
                                             <strong><a>{{room.RoomNo}}</a></strong>
                                         </td>
@@ -129,7 +129,7 @@
                                                 Name
                                             </td>
                                         </tr>
-                                        <tr *ngFor="#roomtype of setupService.roomTypeList" (click)="roomTypeClick(roomtype)">
+                                        <tr *ngFor="let roomtype of setupService.roomTypeList" (click)="roomTypeClick(roomtype)">
                                             <td>
                                                 <strong><a>{{roomtype.Code}}</a></strong>
                                             </td>
@@ -170,7 +170,7 @@
                                                 Name
                                             </td>
                                         </tr>
-                                        <tr *ngFor="#roomcate of setupService.roomCategoryList" (click)="roomCateClick(roomcate)">
+                                        <tr *ngFor="let roomcate of setupService.roomCategoryList" (click)="roomCateClick(roomcate)">
                                             <td>
                                                 <strong><a>{{roomcate.Code}}</a></strong>
                                             </td>
@@ -241,7 +241,7 @@
                                             Rate VND
                                         </td>
                                     </tr>
-                                    <tr *ngFor="#rate of setupService.rates" (click)="rateClick(rate)">
+                                    <tr *ngFor="let rate of setupService.rates" (click)="rateClick(rate)">
                                         <td>
                                             <strong><a>{{rate.Code}}</a></strong>
                                         </td>

@@ -16,19 +16,19 @@
                     <tbody>
                     <tr class="">
                         <td colspan="2" >Date</td>
-                        <td *ngFor="#m of yearMonth" [attr.colspan]="m.days">{{m.month}}</td>
+                        <td *ngFor="let m of yearMonth" [attr.colspan]="m.days">{{m.month}}</td>
                     </tr>
                     <tr >
                         <td width="15" class="roomItem cell-header roomItem-firt">Name</td>
                         <td width="10" class="roomItem cell-header">No</td>
-                        <td *ngFor="#item of dates" class="roomItem" [class.yesterday]="item.day==yesterday">{{item.day}}</td>
+                        <td *ngFor="let item of dates" class="roomItem" [class.yesterday]="item.day==yesterday">{{item.day}}</td>
                     </tr>
 
-                    <tr *ngFor="#room of rooms" [attr.data-row]="room.RoomNo">
+                    <tr *ngFor="let room of rooms" [attr.data-row]="room.RoomNo">
                         <td class="roomItem roomItem-firt" >{{room.Type}}</td>
                         <td class="roomItem">{{room.RoomNo}}</td>
 
-                        <template ngFor #item [ngForOf]="dates">
+                        <template ngFor let-item [ngForOf]="dates">
                             <td *ngIf="checkDateUISelect(room.RoomNo,item)" class="roomItem planConten cell-item" [class.yesterday]="item.day==yesterday"
                                 [attr.colspan]="setResUI(room.RoomNo,item)"
                                 [attr.data-id]="room.RoomNo"  [attr.data-col]="item.day" >

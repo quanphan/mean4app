@@ -82,7 +82,7 @@
                                     </td>
 
                                 </tr>
-                                <tr *ngFor="#guest of guestList" (click)="onGuestClick(guest)">
+                                <tr *ngFor="let guest of guestList" (click)="onGuestClick(guest)">
 
                                     <td>
                                         {{guest.Name}}
