@@ -1,10 +1,7 @@
 /**
  * Created by phanquan on 7/31/16.
  */
-/**
- * Created by phanquan on 7/24/16.
- */
-System.register(['@angular/core', 'textmask/createTextMaskInputElement.js'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -16,27 +13,41 @@ System.register(['@angular/core', 'textmask/createTextMaskInputElement.js'], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, createTextMaskInputElement;
-    var MaskedInputDirective;
+    var core_1;
+    var MaskedNumberDirective;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (createTextMaskInputElement_1) {
-                createTextMaskInputElement = createTextMaskInputElement_1;
             }],
         execute: function() {
-            let MaskedInputDirective = class MaskedInputDirective {
+            //import * as createTextMaskInputElement from 'textmask/createTextMaskInputElement.js'
+            let MaskedNumberDirective = class MaskedNumberDirective {
                 constructor(inputElement) {
                     this.textMaskConfig = {
                         mask: '',
+                        guide: false,
+                        placeholderChar: '_',
+                        pipe: undefined,
+                        keepCharPositions: false,
+                        number: '',
+                        onReject: undefined,
+                        onAccept: undefined
                     };
                     this.inputElement = inputElement.nativeElement;
                 }
                 ngOnInit() {
                     const { placeholderChar } = this.textMaskConfig;
-                    this.control = createTextMaskInputElement.createNumberMask({ allowDecimal: true });
+                    //const numberMask = createTextMaskInputElement.createNumberMask({
+                    //    suprefix:'',
+                    //    suffix:'',
+                    //    allowDecimal: true
+                    //});
+                    //this.textMaskConfig.mask=numberMask ;
+                    //this.control =createTextMaskInputElement.createTextMask(Object.assign({
+                    //    inputElement: this.inputElement,
+                    //    placeholderChar,
+                    //}, this.textMaskConfig));
                     setTimeout(() => this.onInput());
                 }
                 onInput() {
@@ -44,10 +55,10 @@ System.register(['@angular/core', 'textmask/createTextMaskInputElement.js'], fun
                 }
             };
             __decorate([
-                core_1.Input('nMask'), 
+                core_1.Input('textMask'), 
                 __metadata('design:type', Object)
-            ], MaskedInputDirective.prototype, "textMaskConfig", void 0);
-            MaskedInputDirective = __decorate([
+            ], MaskedNumberDirective.prototype, "textMaskConfig", void 0);
+            MaskedNumberDirective = __decorate([
                 core_1.Directive({
                     selector: 'input[nMask]',
                     host: {
@@ -55,11 +66,11 @@ System.register(['@angular/core', 'textmask/createTextMaskInputElement.js'], fun
                     }
                 }), 
                 __metadata('design:paramtypes', [core_1.ElementRef])
-            ], MaskedInputDirective);
-            exports_1("MaskedInputDirective", MaskedInputDirective);
-            exports_1("Directive", MaskedInputDirective);
+            ], MaskedNumberDirective);
+            exports_1("MaskedNumberDirective", MaskedNumberDirective);
+            exports_1("Directive", MaskedNumberDirective);
         }
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRyb2wtY29tcG9uZW50L2RpcmVjdGl2ZXMvbnVtYmVyTWFzay5kaXJlY3RpdmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFDSDs7R0FFRzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lBV0g7Z0JBU0ksWUFBWSxZQUF3QjtvQkFMcEIsbUJBQWMsR0FBRzt3QkFDN0IsSUFBSSxFQUFFLEVBQUU7cUJBRVgsQ0FBQztvQkFHRSxJQUFJLENBQUMsWUFBWSxHQUFHLFlBQVksQ0FBQyxhQUFhLENBQUE7Z0JBQ2xELENBQUM7Z0JBRUQsUUFBUTtvQkFDSixNQUFNLEVBQUMsZUFBZSxFQUFDLEdBQUcsSUFBSSxDQUFDLGNBQWMsQ0FBQztvQkFFOUMsSUFBSSxDQUFDLE9BQU8sR0FBRSwwQkFBMEIsQ0FBQyxnQkFBZ0IsQ0FBQyxFQUFDLFlBQVksRUFBRSxJQUFJLEVBQUMsQ0FBQyxDQUFDO29CQUVoRixVQUFVLENBQUMsTUFBTSxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUMsQ0FBQztnQkFDckMsQ0FBQztnQkFFRCxPQUFPO29CQUNILElBQUksQ0FBQyxPQUFPLENBQUMsTUFBTSxFQUFFLENBQUM7Z0JBQzFCLENBQUM7WUFDTCxDQUFDO1lBcEJHO2dCQUFDLFlBQUssQ0FBQyxPQUFPLENBQUM7O3dFQUFBO1lBVm5CO2dCQUFDLGdCQUFTLENBQUM7b0JBQ1AsUUFBUSxFQUFFLGNBQWM7b0JBQ3hCLElBQUksRUFBRTt3QkFDRixTQUFTLEVBQUUsV0FBVztxQkFDekI7aUJBQ0osQ0FBQzs7b0NBQUE7WUFDRix1REF3QkMsQ0FBQTtZQUUrQiw0Q0FBUyIsImZpbGUiOiJjb250cm9sLWNvbXBvbmVudC9kaXJlY3RpdmVzL251bWJlck1hc2suZGlyZWN0aXZlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBDcmVhdGVkIGJ5IHBoYW5xdWFuIG9uIDcvMzEvMTYuXG4gKi9cbi8qKlxuICogQ3JlYXRlZCBieSBwaGFucXVhbiBvbiA3LzI0LzE2LlxuICovXG5cbmltcG9ydCB7RGlyZWN0aXZlLEF0dHJpYnV0ZSwgRWxlbWVudFJlZixIb3N0TGlzdGVuZXIsIElucHV0fSBmcm9tICdAYW5ndWxhci9jb3JlJ1xuaW1wb3J0ICogYXMgY3JlYXRlVGV4dE1hc2tJbnB1dEVsZW1lbnQgZnJvbSAndGV4dG1hc2svY3JlYXRlVGV4dE1hc2tJbnB1dEVsZW1lbnQuanMnXG5cbkBEaXJlY3RpdmUoe1xuICAgIHNlbGVjdG9yOiAnaW5wdXRbbk1hc2tdJyxcbiAgICBob3N0OiB7XG4gICAgICAgICcoaW5wdXQpJzogJ29uSW5wdXQoKSdcbiAgICB9XG59KVxuZXhwb3J0ICBjbGFzcyBNYXNrZWRJbnB1dERpcmVjdGl2ZSB7XG4gICAgcHJpdmF0ZSBpbnB1dEVsZW1lbnQ6SFRNTElucHV0RWxlbWVudDtcbiAgICBwdWJsaWMgY29udHJvbDogYW55O1xuXG4gICAgQElucHV0KCduTWFzaycpIHRleHRNYXNrQ29uZmlnID0ge1xuICAgICAgICBtYXNrOiAnJyxcblxuICAgIH07XG5cbiAgICBjb25zdHJ1Y3RvcihpbnB1dEVsZW1lbnQ6IEVsZW1lbnRSZWYpIHtcbiAgICAgICAgdGhpcy5pbnB1dEVsZW1lbnQgPSBpbnB1dEVsZW1lbnQubmF0aXZlRWxlbWVudFxuICAgIH1cblxuICAgIG5nT25Jbml0KCkge1xuICAgICAgICBjb25zdCB7cGxhY2Vob2xkZXJDaGFyfSA9IHRoaXMudGV4dE1hc2tDb25maWc7XG5cbiAgICAgICAgdGhpcy5jb250cm9sID1jcmVhdGVUZXh0TWFza0lucHV0RWxlbWVudC5jcmVhdGVOdW1iZXJNYXNrKHthbGxvd0RlY2ltYWw6IHRydWV9KTtcblxuICAgICAgICBzZXRUaW1lb3V0KCgpID0+IHRoaXMub25JbnB1dCgpKTtcbiAgICB9XG5cbiAgICBvbklucHV0KCkge1xuICAgICAgICB0aGlzLmNvbnRyb2wudXBkYXRlKCk7XG4gICAgfVxufVxuXG5leHBvcnQge01hc2tlZElucHV0RGlyZWN0aXZlIGFzIERpcmVjdGl2ZX1cblxuXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRyb2wtY29tcG9uZW50L2RpcmVjdGl2ZXMvbnVtYmVyTWFzay5kaXJlY3RpdmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztZQUdILHNGQUFzRjtZQVF0RjtnQkFlSSxZQUFZLFlBQXdCO29CQVhqQixtQkFBYyxHQUFHO3dCQUNoQyxJQUFJLEVBQUUsRUFBRTt3QkFDUixLQUFLLEVBQUUsS0FBSzt3QkFDWixlQUFlLEVBQUUsR0FBRzt3QkFDcEIsSUFBSSxFQUFFLFNBQVM7d0JBQ2YsaUJBQWlCLEVBQUUsS0FBSzt3QkFDeEIsTUFBTSxFQUFDLEVBQUU7d0JBQ1QsUUFBUSxFQUFFLFNBQVM7d0JBQ25CLFFBQVEsRUFBRSxTQUFTO3FCQUN0QixDQUFDO29CQUdFLElBQUksQ0FBQyxZQUFZLEdBQUcsWUFBWSxDQUFDLGFBQWEsQ0FBQTtnQkFDbEQsQ0FBQztnQkFFRCxRQUFRO29CQUNKLE1BQU0sRUFBQyxlQUFlLEVBQUMsR0FBRyxJQUFJLENBQUMsY0FBYyxDQUFDO29CQUU5QyxrRUFBa0U7b0JBQ2xFLGtCQUFrQjtvQkFDbEIsZ0JBQWdCO29CQUNoQix3QkFBd0I7b0JBQ3hCLEtBQUs7b0JBRUwsdUNBQXVDO29CQUN2Qyx5RUFBeUU7b0JBQ3pFLHNDQUFzQztvQkFDdEMsc0JBQXNCO29CQUN0QiwyQkFBMkI7b0JBRTNCLFVBQVUsQ0FBQyxNQUFNLElBQUksQ0FBQyxPQUFPLEVBQUUsQ0FBQyxDQUFDO2dCQUNyQyxDQUFDO2dCQUVELE9BQU87b0JBQ0gsSUFBSSxDQUFDLE9BQU8sQ0FBQyxNQUFNLEVBQUUsQ0FBQztnQkFDMUIsQ0FBQztZQUNMLENBQUM7WUFwQ0c7Z0JBQUMsWUFBSyxDQUFDLFVBQVUsQ0FBQzs7eUVBQUE7WUFWdEI7Z0JBQUMsZ0JBQVMsQ0FBQztvQkFDUCxRQUFRLEVBQUUsY0FBYztvQkFDeEIsSUFBSSxFQUFFO3dCQUNGLFNBQVMsRUFBRSxXQUFXO3FCQUN6QjtpQkFDSixDQUFDOztxQ0FBQTtZQUNGLHlEQXdDQyxDQUFBO1lBRWdDLDZDQUFTIiwiZmlsZSI6ImNvbnRyb2wtY29tcG9uZW50L2RpcmVjdGl2ZXMvbnVtYmVyTWFzay5kaXJlY3RpdmUuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIENyZWF0ZWQgYnkgcGhhbnF1YW4gb24gNy8zMS8xNi5cbiAqL1xuXG5pbXBvcnQge0RpcmVjdGl2ZSxBdHRyaWJ1dGUsIEVsZW1lbnRSZWYsSG9zdExpc3RlbmVyLCBJbnB1dH0gZnJvbSAnQGFuZ3VsYXIvY29yZSdcbi8vaW1wb3J0ICogYXMgY3JlYXRlVGV4dE1hc2tJbnB1dEVsZW1lbnQgZnJvbSAndGV4dG1hc2svY3JlYXRlVGV4dE1hc2tJbnB1dEVsZW1lbnQuanMnXG5cbkBEaXJlY3RpdmUoe1xuICAgIHNlbGVjdG9yOiAnaW5wdXRbbk1hc2tdJyxcbiAgICBob3N0OiB7XG4gICAgICAgICcoaW5wdXQpJzogJ29uSW5wdXQoKSdcbiAgICB9XG59KVxuZXhwb3J0ICBjbGFzcyBNYXNrZWROdW1iZXJEaXJlY3RpdmUge1xuICAgIHByaXZhdGUgaW5wdXRFbGVtZW50OkhUTUxJbnB1dEVsZW1lbnQ7XG4gICAgcHVibGljIGNvbnRyb2w6IGFueTtcblxuICAgIEBJbnB1dCgndGV4dE1hc2snKSB0ZXh0TWFza0NvbmZpZyA9IHtcbiAgICAgICAgbWFzazogJycsXG4gICAgICAgIGd1aWRlOiBmYWxzZSxcbiAgICAgICAgcGxhY2Vob2xkZXJDaGFyOiAnXycsXG4gICAgICAgIHBpcGU6IHVuZGVmaW5lZCxcbiAgICAgICAga2VlcENoYXJQb3NpdGlvbnM6IGZhbHNlLFxuICAgICAgICBudW1iZXI6JycsXG4gICAgICAgIG9uUmVqZWN0OiB1bmRlZmluZWQsXG4gICAgICAgIG9uQWNjZXB0OiB1bmRlZmluZWRcbiAgICB9O1xuXG4gICAgY29uc3RydWN0b3IoaW5wdXRFbGVtZW50OiBFbGVtZW50UmVmKSB7XG4gICAgICAgIHRoaXMuaW5wdXRFbGVtZW50ID0gaW5wdXRFbGVtZW50Lm5hdGl2ZUVsZW1lbnRcbiAgICB9XG5cbiAgICBuZ09uSW5pdCgpIHtcbiAgICAgICAgY29uc3Qge3BsYWNlaG9sZGVyQ2hhcn0gPSB0aGlzLnRleHRNYXNrQ29uZmlnO1xuXG4gICAgICAgIC8vY29uc3QgbnVtYmVyTWFzayA9IGNyZWF0ZVRleHRNYXNrSW5wdXRFbGVtZW50LmNyZWF0ZU51bWJlck1hc2soe1xuICAgICAgICAvLyAgICBzdXByZWZpeDonJyxcbiAgICAgICAgLy8gICAgc3VmZml4OicnLFxuICAgICAgICAvLyAgICBhbGxvd0RlY2ltYWw6IHRydWVcbiAgICAgICAgLy99KTtcblxuICAgICAgICAvL3RoaXMudGV4dE1hc2tDb25maWcubWFzaz1udW1iZXJNYXNrIDtcbiAgICAgICAgLy90aGlzLmNvbnRyb2wgPWNyZWF0ZVRleHRNYXNrSW5wdXRFbGVtZW50LmNyZWF0ZVRleHRNYXNrKE9iamVjdC5hc3NpZ24oe1xuICAgICAgICAvLyAgICBpbnB1dEVsZW1lbnQ6IHRoaXMuaW5wdXRFbGVtZW50LFxuICAgICAgICAvLyAgICBwbGFjZWhvbGRlckNoYXIsXG4gICAgICAgIC8vfSwgdGhpcy50ZXh0TWFza0NvbmZpZykpO1xuXG4gICAgICAgIHNldFRpbWVvdXQoKCkgPT4gdGhpcy5vbklucHV0KCkpO1xuICAgIH1cblxuICAgIG9uSW5wdXQoKSB7XG4gICAgICAgIHRoaXMuY29udHJvbC51cGRhdGUoKTtcbiAgICB9XG59XG5cbmV4cG9ydCB7TWFza2VkTnVtYmVyRGlyZWN0aXZlIGFzIERpcmVjdGl2ZX1cblxuXG5cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
