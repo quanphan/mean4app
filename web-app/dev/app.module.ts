@@ -16,6 +16,9 @@ import {AuthConfig, AuthHttp } from 'angular2-jwt';
 
 import {ComModule} from "./components/common/company.module";
 import {AccountModule} from "./components/account/account.module";
+import {ReservationModule} from "./components/reservation/reservation.module";
+import {SetupModule} from "./components/setup/setup.module";
+
 import {MeanControlModule} from "./control-component/meancontrol.module";
 
 import {ReservationCanDeactivateGuard} from "./components/reservation/reservationCanDeactivate.Guard";
@@ -33,11 +36,6 @@ import {BookingComponent} from "./components/common/booking.component";
 import {ProfileComponent} from "./components/account/profile.component";
 import {MailboxComponent} from "./components/puclic/mailbox.component";
 import {PricingComponent} from "./components/home/pricing.component";
-import {resRouter} from "./components/reservation/reservation.routers";
-import {comRouter} from "./components/common/company.routers";
-import {setupRouter} from "./components/setup/setup.routers";
-import {accountRouter} from "./components/account/account.routers";
-
 
 
 import {ReservationCanDeactivateGuard} from "./components/reservation/reservationCanDeactivate.Guard";
@@ -58,7 +56,7 @@ enableProdMode();
             deps: [Http]
         }),
         ComModule,
-        AccountModule,
+        AccountModule,ReservationModule,SetupModule,
         MeanControlModule
     ],
     declarations: [

@@ -3,7 +3,7 @@
  */
 
 import { Routes, RouterModule} from '@angular/router';
-
+import {ModuleWithProviders }  from '@angular/core';
 import {SetupComponent} from "../../components/setup/setup.component";
 import {RoomComponent} from "../../components/setup/rooms.component";
 import {PackageComponent} from "../../components/setup/package.component";
@@ -23,3 +23,4 @@ export const setupRouter: Routes = [
         ]
     }
 ];
+export const setupRouting: ModuleWithProviders = RouterModule.forChild(setupRouter);

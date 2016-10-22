@@ -3,19 +3,13 @@
  */
 
 import {Routes, RouterModule} from '@angular/router';
-
+import {ModuleWithProviders }  from '@angular/core';
 import {CheckinComponent} from "../../components/reservation/checkin.component";
 import {RoomplanComponent} from "../../components/reservation/roomplan.component";
 import {ReservationComponent} from "../../components/reservation/reservation.component";
 import {ReservationCanDeactivateGuard} from "../../components/reservation/reservationCanDeactivate.Guard";
 
 export const resRouter: Routes = [
-    //{
-    //    path: '',
-    //    redirectTo: '/reservation',
-    //    pathMatch: 'full'
-    //},
-
     {
         path: 'reservation',
         component: ReservationComponent,
@@ -27,3 +21,5 @@ export const resRouter: Routes = [
         ]
     }
 ];
+
+export const resRouting: ModuleWithProviders = RouterModule.forChild(resRouter);

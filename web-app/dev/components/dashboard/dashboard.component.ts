@@ -4,13 +4,10 @@
 
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-
 import {TranslateService, TranslatePipe, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 
 @Component({
     templateUrl: './views/dashboard/dashboard.html',
-    //directives: [DropdownComponent,MutliSelectComponent,ComboComponent,InputComponent,
-    //    MaskedInputDirective,MaskInput,SelectComponent,DatePicker,InputNumberComponent],
     pipes: [TranslatePipe],
 })
 

@@ -7,6 +7,10 @@ import {BrowserModule }  from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule }    from '@angular/forms';
 import {CommonModule }       from '@angular/common';
 
+import {CheckboxComponent} from './checkbox.component';
+import {TogglebuttonComponent} from './togglebutton.component';
+
+
 import {InputComponent} from './input/input.component';
 import {SearchComponent} from './input/search.component';
 import {MutliSelectComponent} from './mutilselect.component';
@@ -27,14 +31,16 @@ import {MaskedInputDirective} from './directives/inputMask.directive';
     declarations: [
         InputComponent,MutliSelectComponent,SelectComponent,DatePicker,InputNumberComponent,
         ComboComponent,DropdownComponent,MutliSelectComponent,
-        MaskedInputDirective,SearchComponent
+        MaskedInputDirective,SearchComponent,
+        CheckboxComponent,TogglebuttonComponent
     ],
     providers: [
 
     ],
     exports:[InputComponent,MutliSelectComponent,SelectComponent,DatePicker,InputNumberComponent,
         ComboComponent,DropdownComponent,MutliSelectComponent,
-        MaskedInputDirective,SearchComponent
+        MaskedInputDirective,SearchComponent,
+        CheckboxComponent,TogglebuttonComponent
     ],
 
 })

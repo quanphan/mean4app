@@ -3,7 +3,7 @@
  */
 import {NgModule }       from '@angular/core';
 import {BrowserModule }  from '@angular/platform-browser';
-import {FormsModule,ReactiveFormsModule }    from '@angular/forms';
+import {FormsModule,ReactiveFormsModule }  from '@angular/forms';
 import {HttpModule,Http} from '@angular/http';
 import {CommonModule }       from '@angular/common';
 import {MeanControlModule} from "../../control-component/meancontrol.module";
@@ -17,6 +17,7 @@ import {AccountActivityComponent} from "../../components/account/accountActivity
 import {AccountEditComponent} from "../../components/account/accountEdit.component";
 import {AccountSetingComponent} from "../../components/account/accountSeting.component";
 import {AccountMembeEditComponent} from "../../components/account/accountMemberEdit.component";
+
 @NgModule({
     imports: [
         CommonModule, FormsModule,ReactiveFormsModule,BrowserModule,
