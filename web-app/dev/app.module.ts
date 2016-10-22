@@ -14,6 +14,7 @@ import {AppRouting} from "./app.routes"
 import {TranslateModule,TranslateLoader,TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 import {AuthConfig, AuthHttp } from 'angular2-jwt';
 
+import {DashboardModule} from "./components/dashboard/dashboard.module";
 import {ComModule} from "./components/common/company.module";
 import {AccountModule} from "./components/account/account.module";
 import {ReservationModule} from "./components/reservation/reservation.module";
@@ -31,7 +32,6 @@ import {HomeComponent} from "./components/home/home.component";
 import {LoginComponent} from "./components/puclic/login.component";
 import {AboutComponent} from "./components/home/about.component";
 import {ContactComponent} from "./components/home/contact.component";
-import {DashboardComponent} from  "./components/dashboard/dashboard.component";
 import {BookingComponent} from "./components/common/booking.component";
 import {ProfileComponent} from "./components/account/profile.component";
 import {MailboxComponent} from "./components/puclic/mailbox.component";
@@ -56,7 +56,7 @@ enableProdMode();
             deps: [Http]
         }),
         ComModule,
-        AccountModule,ReservationModule,SetupModule,
+        AccountModule,ReservationModule,SetupModule,DashboardModule,
         MeanControlModule
     ],
     declarations: [
@@ -64,7 +64,7 @@ enableProdMode();
         HomeComponent,AboutComponent,ContactComponent,MailboxComponent,
         HeaderComponent,NavbarComponent,
         LoginComponent,ProfileComponent,PricingComponent,
-        DashboardComponent,BookingComponent,DemoComponent,
+        BookingComponent,DemoComponent,
 
     ],
     providers: [
