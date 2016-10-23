@@ -31,6 +31,8 @@ export class DemoComponent {
 
     test="";
     test1="2016-07-12";
+    test2="2016-10-15";
+
     public companyList=[
         {value:'1',label:" Success software"},
         {value:'2',label:" Aperia Solutions software"},

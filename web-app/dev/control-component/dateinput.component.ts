@@ -2,7 +2,7 @@
  * Created by phanquan on 7/2/16.
  */
 
-import {Component, ViewContainerRef, Input, Output, EventEmitter, AfterViewInit} from '@angular/core';
+import {Component, ViewContainerRef, Input, Output, EventEmitter, AfterViewInit,forwardRef} from '@angular/core';
 import {NgIf, NgFor, NgClass} from '@angular/common';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
@@ -17,13 +17,19 @@ interface CalendarDate {
 }
 
 @Component({
-    selector: 'datepicker[ngModel]',
+    selector: 'datepicker',
     templateUrl: './views/controls/datetimeInput.html',
-    providers: [],
-    directives: [ NgIf, NgFor, NgClass],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => DatePicker),
+            multi: true
+        }
+    ],
     pipes: []
 })
-export class DatePicker{
+
+export class DatePicker implements ControlValueAccessor, AfterViewInit{
     public isOpened: boolean;
     public dateValue: string;
     public viewValue: string;
@@ -41,29 +47,40 @@ export class DatePicker{
     @Input() ngLabel: string;
     @Input('model-format') modelFormat: string;
     @Input('view-format') viewFormat: string;
-    @Input('init-date') initDate: string;
+    @Input('init-date') initDate: boolean;
     @Input('first-week-day-sunday') firstWeekDaySunday: boolean;
     @Input('static') isStatic: boolean;
-    @Input() NgModel: any;
-    @Output() changed: EventEmitter<Date> = new EventEmitter<Date>();
+    @Input() ngModel: any;
 
-    constructor( viewContainer: ViewContainerRef) {
+    @Output() ngModelChange:any = new EventEmitter<string>();
 
-        this.cd = this.NgModel;
-        this.viewContainer = viewContainer;
-        this.el = viewContainer.element.nativeElement;
-        this.init();
-    }
-    //constructor(cd: NgModel, viewContainer: ViewContainerRef) {
-    //    cd.valueAccessor = this;
-    //    this.cd = cd;
+    //constructor( viewContainer: ViewContainerRef) {
+    //    this.cd = this.ngModel;
     //    this.viewContainer = viewContainer;
     //    this.el = viewContainer.element.nativeElement;
     //    this.init();
     //}
+
+    constructor( viewContainer: ViewContainerRef) {
+        this.cd = this.ngModel;
+        //this.cd.valueAccessor = this;
+        this.viewContainer = viewContainer;
+        this.el = viewContainer.element.nativeElement;
+        this.init();
+    }
+
+    defaultViewFomat:string="MM/DD/YYYY";
+    defaultModelFomat:string="YYYY-MM-DD";
+
     _focused:boolean=false;
+
     ngAfterViewInit() {
-        this.initValue();
+        if(!this.modelFormat) this.modelFormat=this.defaultModelFomat;
+        if(!this.viewFormat) this.viewFormat=this.defaultViewFomat;
+        if(!this.ngModel && this.initDate){
+            this.ngModel = moment().format(this.modelFormat);
+            this.ngModelChange.emit( moment().format(this.modelFormat));
+        }
     }
 
     public openDatepicker(): void {
@@ -103,7 +120,8 @@ export class DatePicker{
         let selectedDate = moment(date.day + '.' + date.month + '.' + date.year, 'DD.MM.YYYY');
         this.setValue(selectedDate);
         this.closeDatepicker();
-        this.changed.emit(selectedDate.toDate());
+        let modelval=moment(selectedDate);
+        this.ngModelChange.emit(modelval.format(this.modelFormat));
     }
 
     private generateCalendar(date: moment1.Moment): void {
@@ -162,20 +180,23 @@ export class DatePicker{
     }
 
     private setValue(value: any): void {
-        let val = moment(value, this.modelFormat || 'YYYY-MM-DD');
-        this.viewValue = val.format(this.viewFormat || 'Do MMMM YYYY');
-        this.cd.viewToModelUpdate(val.format(this.modelFormat || 'YYYY-MM-DD'));
+        let val = moment(value, this.modelFormat);
+        //this.viewValue = val.format(this.viewFormat || 'Do MMMM YYYY');
+        //this.ngModel = val.format(this.modelFormat);
         this.cannonical = val.toDate().getTime();
     }
 
-    private initValue(): void {
-        setTimeout(() => {
-            if (!this.initDate) {
-                this.setValue(moment().format(this.modelFormat || 'YYYY-MM-DD'));
-            } else {
-                this.setValue(moment(this.initDate, this.modelFormat || 'YYYY-MM-DD'));
+    viewValue(){
+        let viewVal=moment(this.ngModel, this.modelFormat);
+        if(viewVal.isValid()){
+            return viewVal.format(this.viewFormat );
+        }else{
+            if(this.initDate){
+                return moment().format(this.viewFormat )
+            }else {
+                return "";
             }
-        });
+        }
     }
 
     writeValue(value: string): void {
@@ -189,6 +210,10 @@ export class DatePicker{
 
     registerOnTouched(fn: (_: any) => {}): void {
         this.onTouched = fn;
+    }
+
+    setDisabledState(isDisabled: boolean) : void{
+        this.setDisabledState(isDisabled);
     }
 
     private init(): void {

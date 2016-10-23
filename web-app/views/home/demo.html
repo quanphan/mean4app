@@ -8,6 +8,7 @@
         <label class="col-lg-2 control-label">Number</label>
         <div class="col-lg-6">
             <ng2-InputNumber  ngLabel="Number abc"  [(bindModelData)]="comp.value" ngMask="111111.99"></ng2-InputNumber>
+            <!--<input [textMask]="{number: '(111) 111 - 111'}" [(ngModel)]="comp.value"  type="text">-->
             <span>{{comp.value}}</span>
         </div>
 
@@ -44,11 +45,36 @@
         <label class="col-lg-2 control-label">Mutil select </label>
         <div class="col-lg-6">
             <ng2-multiselect (selectionModelChange)="onUpdate($event)" [items]="dropItems" [selectionModel]="selected">
-
             </ng2-multiselect>
-            <!--{{selOut | json}}-->
         </div>
     </div>
 
 
+
+    <h3>Date time</h3>
+    <h4>date</h4>
+    <div class="row form-group1">
+        <div class="col-lg-4">
+            <datepicker [(ngModel)]="test1" view-format="DD/MM/YYYY" model-format="YYYY.MM.DD"  ngLabel="From date1">
+            </datepicker>
+        </div>
+        <div class="col-lg-4">
+            <datepicker [(ngModel)]="test1" view-format="DD.MM.YYYY"  model-format="YYYY/MM/DD" ngLabel="From date1"></datepicker>
+        </div>
+
+        <div class="col-lg-12">
+            Model data: {{test2}}
+        </div>
+
+    </div>
+
+    <h4>init-date</h4>
+    <div class="row form-group1">
+        <div class="col-lg-6">
+            <datepicker [(ngModel)]="test" ngLabel="To date" init-date="true"></datepicker>
+        </div>
+        <div class="col-lg-12">
+            Model data: {{test}}
+        </div>
+    </div>
 </div>
